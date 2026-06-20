@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light mode (default) */
+    --bg-base: #F8F9FA;
+    --bg-elevated: #FFFFFF;
+    --bg-subtle: #F1F3F5;
+    --border: #E4E4E7;
+    --text-primary: #0F0F10;
+    --text-secondary: #4A4A4F;
+    --text-muted: #7E7E85;
+    --accent: #D97706; /* amber-600 */
+    --accent-hover: #B45309; /* amber-700 */
+    --accent-muted: rgba(217, 119, 6, 0.08);
+    --bg-nav: rgba(248, 249, 250, 0.95);
+  }
+
+  .dark {
+    /* Dark mode */
+    --bg-base: #0A0A0A;
+    --bg-elevated: #141414;
+    --bg-subtle: #1C1C1C;
+    --border: #2A2A2A;
+    --text-primary: #F5F5F4;
+    --text-secondary: #A3A3A0;
+    --text-muted: #6B6B68;
+    --accent: #F5A623; /* amber-400 equivalent */
+    --accent-hover: #FFC04D;
+    --accent-muted: rgba(245, 166, 35, 0.1);
+    --bg-nav: rgba(10, 10, 10, 0.9);
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg-base);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', system-ui, sans-serif;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--bg-base);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+  }
+
+  /* Selection color */
+  ::selection {
+    background: var(--accent-muted);
+    color: var(--text-primary);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-6 md:px-12 lg:px-24 xl:px-32;
+  }
+
+  .max-container {
+    @apply max-w-7xl mx-auto w-full;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background-color: var(--bg-nav);
+    transition: background-color 0.3s ease;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, var(--accent), var(--accent-hover));
+  }
+
+  .link-underline {
+    @apply relative;
+  }
+
+  .link-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[2px] bg-accent transition-all duration-300;
+  }
+
+  .link-underline:hover::after {
+    @apply w-full;
+  }
+
+  /* Vercel-style dotted grid mesh background */
+  .grid-mesh {
+    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-size: 32px 32px;
+    mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 100%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 100%);
+  }
+}
+
+/* Drift animations for background blobs */
+@keyframes blob-drift-1 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(8vw, -8vh) scale(1.15);
+  }
+  66% {
+    transform: translate(-4vw, 12vh) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob-drift-2 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-10vw, 8vh) scale(1.2);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes blob-drift-3 {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  40% {
+    transform: translate(6vw, 6vh) scale(0.95);
+  }
+  80% {
+    transform: translate(-4vw, -6vh) scale(1.05);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+.animate-blob-1 {
+  animation: blob-drift-1 25s ease-in-out infinite;
+}
+
+.animate-blob-2 {
+  animation: blob-drift-2 32s ease-in-out infinite alternate;
+}
+
+.animate-blob-3 {
+  animation: blob-drift-3 28s ease-in-out infinite;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .animate-blob-1,
+  .animate-blob-2,
+  .animate-blob-3 {
+    animation: none !important;
+    display: none !important;
+  }
+}
