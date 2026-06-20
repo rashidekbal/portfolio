@@ -1,146 +1,319 @@
 export const projects = [
-  {
-    slug: "threadly",
-    title: "Threadly",
-    tagline: "A real-time social platform built for meaningful conversations",
-    description: `Threadly is a full-stack social platform designed around threaded conversations — not infinite feeds. Built solo over 7 months, it handles real-time messaging, nested comment threads, user profiles, media uploads, and notification systems.
+{
+slug: "threadly",
+title: "Threadly",
+tagline: "A real-time social platform built from scratch with messaging, stories, and content sharing",
+description: `Threadly is a full-stack social media platform developed as a long-term solo project focused on real-time communication and community interaction.
+
+Built with a layered TypeScript backend and a native Android client, Threadly includes posts, reels, stories, comments, likes, follows, private accounts, notifications, and a complete messaging system. The platform uses Socket.IO for real-time communication, Redis for caching, Cloudinary for media management, and Firebase Cloud Messaging for push notifications.
 
 ## The Problem
 
-Most social platforms optimize for engagement metrics, not genuine conversation. Threadly was built to prove that a single developer could ship a production-grade social experience that prioritizes depth over virality.
+Most personal projects stop at authentication and CRUD operations. Threadly was built as an attempt to understand the challenges behind production-grade social applications including messaging, media delivery, notifications, moderation, and scalability.
 
 ## Approach
 
-The architecture separates concerns cleanly: a Node.js/Express API layer handles business logic and auth, PostgreSQL manages relational data (users, threads, relationships), Redis powers real-time features and caching, and a React frontend delivers the UI.
+The backend follows a strict Controller → Service → Repository architecture, keeping business logic separated from transport and database layers. Real-time communication is handled through WebSockets while Redis improves performance for frequently accessed data.
 
-## Notable Technical Decisions
+## Technical Highlights
 
-- **WebSocket-based real-time engine** — built from scratch rather than using Firebase, giving full control over event routing and connection management
-- **Custom notification pipeline** — fan-out architecture that handles @mentions, thread replies, and follow notifications without third-party services
-- **Media processing pipeline** — server-side image optimization with sharp, supporting uploads up to 10MB with automatic WebP conversion
-- **Rate limiting & abuse prevention** — token-bucket rate limiter + content hashing to prevent spam floods
+* Real-time messaging powered by Socket.IO
+* Stories, posts, reels, comments, and follow systems
+* Redis caching and session management
+* Cloudinary media processing pipeline
+* Firebase push notification integration
+* Layered architecture with strict separation of concerns
+* JWT authentication and account privacy controls
 
 ## Outcome
 
-842 files across frontend and backend. The platform handles concurrent users, nested threads 10+ levels deep, and real-time updates with sub-200ms latency. Currently in private beta with a small user group.`,
-    tags: ["Full-Stack", "React", "Node.js", "PostgreSQL", "WebSocket", "Redis"],
-    coverImage: "/images/threadly-cover.jpg",
-    screenshots: [
-      "/images/threadly-1.jpg",
-      "/images/threadly-2.jpg",
-      "/images/threadly-3.jpg",
-      "/images/threadly-4.jpg",
-    ],
-    videoUrl: null,
-    links: {
-      github: "https://github.com/rasidekbal/threadly",
-    },
-    featured: true,
-    year: "2024–2025",
-    role: "Solo developer",
-    highlights: [
-      "842 files across full-stack codebase",
-      "7-month solo build from scratch",
-      "Real-time WebSocket engine with sub-200ms latency",
-      "Custom notification fan-out pipeline",
-      "Private beta with active user group",
-    ],
-  },
-  {
-    slug: "eazyotp",
-    title: "EazyOTP",
-    tagline: "Plug-and-play OTP verification service used by external apps in production",
-    description: `EazyOTP is a developer-facing OTP (One-Time Password) verification service — a clean API that any app can integrate to add phone/email verification without building the infrastructure themselves.
+A large-scale social platform built over months of iterative development. The project serves as a practical exploration of backend architecture, mobile development, real-time systems, and scalable social networking features.`,
+tags: [
+"TypeScript",
+"Node.js",
+"MySQL",
+"Redis",
+"Socket.IO",
+"Android"
+],
+coverImage: "/images/threadly-cover.jpg",
+screenshots: [
+"/images/threadly-1.jpg",
+"/images/threadly-2.jpg",
+"/images/threadly-3.jpg",
+"/images/threadly-4.jpg",
+],
+videoUrl: null,
+links: {
+github: "",
+live: "",
+},
+featured: true,
+year: "2024–Present",
+role: "Solo Developer",
+highlights: [
+"Complete social networking platform",
+"Real-time messaging infrastructure",
+"Redis + Socket.IO architecture",
+"Stories, reels, comments, follows and notifications",
+"Full-stack project built from scratch",
+],
+},
 
-## The Problem
+{
+slug: "samar",
+title: "Samar",
+tagline: "An autonomous AI agent framework designed for memory, tools, and self-directed workflows",
+description: `Samar is an experimental AI agent framework focused on building autonomous systems capable of reasoning, using tools, maintaining memory, and executing multi-step workflows.
 
-OTP verification is a solved problem conceptually, but building it properly involves SMS gateway integration, rate limiting, expiry management, retry logic, and abuse prevention. Most indie developers either roll a fragile custom solution or pay for expensive third-party services.
+Built with FastAPI, LangGraph, LangChain, and DeepSeek, the framework allows agents to interact with external systems, persist conversational state, and dynamically choose tools to accomplish goals.
 
-## Approach
+## The Vision
 
-Built as a lightweight, self-hostable service with a simple REST API. Developers integrate with 2 API calls: one to send an OTP, one to verify it. Everything else — code generation, delivery, expiry, rate limiting — is handled internally.
-
-## Technical Architecture
-
-- **API Layer**: Express.js with strict input validation and API key authentication
-- **OTP Engine**: Cryptographically secure code generation, configurable length (4-8 digits), time-based expiry with automatic cleanup
-- **Delivery**: Pluggable transport layer — currently supports SMS (via Twilio) and email (via SendGrid/SMTP)
-- **Security**: Per-key rate limiting, IP-based throttling, brute-force detection (lockout after N failed attempts per phone/email)
-- **Storage**: Redis for OTP state (fast reads, automatic TTL-based expiry)
-
-## Outcome
-
-Adopted by 2 external applications in production. The service handles verification flows reliably with configurable retry policies and clean error responses.`,
-    tags: ["Backend", "API", "Node.js", "Redis", "Open Source"],
-    coverImage: "/images/eazyotp-cover.jpg",
-    screenshots: [
-      "/images/eazyotp-1.jpg",
-      "/images/eazyotp-2.jpg",
-      "/images/eazyotp-3.jpg",
-      "/images/eazyotp-4.jpg",
-    ],
-    videoUrl: null,
-    links: {
-      github: "https://github.com/rasidekbal/eazyotp",
-      npm: "https://npmjs.com/package/eazyotp",
-    },
-    featured: true,
-    year: "2024",
-    role: "Solo developer",
-    highlights: [
-      "Live OTP service with external users in production",
-      "2 external apps adopted it",
-      "Cryptographically secure code generation",
-      "Sub-100ms verification response times",
-      "Pluggable SMS/email transport layer",
-    ],
-  },
-  {
-    slug: "samar",
-    title: "Samar",
-    tagline: "Autonomous AI agent framework for multi-step task execution",
-    description: `Samar is an AI agent system that goes beyond simple prompt-response — it plans, executes multi-step tasks, uses tools, and maintains context across complex workflows.
-
-## The Problem
-
-LLM wrappers that take a prompt and return a response are useful but limited. Real-world tasks — research, code generation, data processing — require planning, tool use, error recovery, and memory. Building this infrastructure from scratch for every AI project is wasteful.
-
-## Approach
-
-Samar provides a framework for building autonomous agents that can decompose goals into steps, select and use tools (web search, code execution, file I/O, API calls), handle failures gracefully, and maintain conversational context.
+Traditional chatbots answer questions. Samar explores what happens when an AI can plan, act, remember, and evolve through interaction.
 
 ## Architecture
 
-- **Agent Core**: Goal decomposition engine that breaks high-level tasks into executable steps
-- **Tool System**: Pluggable tool interface — agents discover available tools and select the right one for each step
-- **Memory Layer**: Short-term (conversation context) and long-term (persistent knowledge) memory systems
-- **Execution Engine**: Step-by-step execution with error detection, retry logic, and plan revision when steps fail
-- **Python SDK**: Clean API for defining custom agents, tools, and workflows
+The platform combines a LangGraph state machine, persistent memory, tool routing, and a modular service architecture. Tools allow interaction with external systems while persistent checkpoints enable long-running conversations.
+
+## Features
+
+* LangGraph-based agent workflow
+* Persistent memory using SQLite
+* Tool-based execution engine
+* FastAPI backend
+* DeepSeek LLM integration
+* Modular architecture for future expansion
 
 ## Outcome
 
-Powers internal automation workflows. The framework handles multi-step research tasks, code generation with iterative refinement, and data pipeline orchestration — tasks that would require manual intervention with simple LLM APIs.`,
-    tags: ["AI/Agents", "Python", "LLM", "Framework", "Open Source"],
-    coverImage: "/images/samar-cover.jpg",
-    screenshots: [
-      "/images/samar-1.jpg",
-      "/images/samar-2.jpg",
-      "/images/samar-3.jpg",
-      "/images/samar-4.jpg",
-    ],
-    videoUrl: null,
-    links: {
-      github: "https://github.com/rasidekbal/samar",
-    },
-    featured: true,
-    year: "2025",
-    role: "Solo developer & architect",
-    highlights: [
-      "Multi-step autonomous task execution",
-      "Pluggable tool system with auto-discovery",
-      "Short-term + long-term memory architecture",
-      "Error recovery with automatic plan revision",
-      "Powers internal automation workflows",
-    ],
-  },
+An evolving AI platform that serves as the foundation for future autonomous systems and experimentation in agentic AI workflows.`,
+tags: [
+"Python",
+"FastAPI",
+"LangGraph",
+"LangChain",
+"AI",
+"Agents"
+],
+coverImage: "/images/samar-cover.jpg",
+screenshots: [
+"/images/samar-1.jpg",
+"/images/samar-2.jpg",
+"/images/samar-3.jpg",
+"/images/samar-4.jpg",
+],
+videoUrl: null,
+links: {
+github: "",
+live: "",
+},
+featured: true,
+year: "2025–Present",
+role: "Founder & Developer",
+highlights: [
+"Autonomous multi-step task execution",
+"Persistent memory architecture",
+"LangGraph workflow engine",
+"Tool-calling framework",
+"Built for future AI experimentation",
+],
+},
+
+{
+slug: "eazyshare",
+title: "EazyShare",
+tagline: "LAN file sharing without cables, accounts, internet, or app installations",
+description: `EazyShare is a peer-to-peer file transfer platform that enables instant file sharing between Windows PCs and mobile devices over a local Wi-Fi network.
+
+Users simply scan a QR code and begin transferring files immediately. The system uses WebRTC DataChannels for direct device communication and supports pause/resume, transfer recovery, persistence, and multi-device broadcasting.
+
+## The Problem
+
+Transferring files between devices often requires cables, cloud storage, or installing dedicated applications.
+
+## Solution
+
+EazyShare eliminates those steps by using local networking, browser-based mobile access, and direct peer-to-peer communication.
+
+## Technical Highlights
+
+* WebRTC DataChannels
+* Electron desktop application
+* QR-based device pairing
+* Transfer persistence and recovery
+* Multi-device architecture
+* LAN-only secure communication
+
+## Outcome
+
+A lightweight productivity tool built to make local file transfers effortless and reliable.`,
+tags: [
+"Electron",
+"Node.js",
+"WebRTC",
+"WebSocket",
+"Desktop"
+],
+coverImage: "/images/eazyshare-cover.jpg",
+screenshots: [
+"/images/eazyshare-1.jpg",
+"/images/eazyshare-2.jpg",
+"/images/eazyshare-3.jpg",
+"/images/eazyshare-4.jpg",
+],
+videoUrl: null,
+links: {
+github: "",
+live: "",
+},
+featured: true,
+year: "2025",
+role: "Solo Developer",
+highlights: [
+"Peer-to-peer transfers using WebRTC",
+"Zero-install mobile experience",
+"Pause and resume support",
+"Automatic transfer recovery",
+"Multi-device broadcasting",
+],
+},
+
+{
+slug: "eazyotp",
+title: "EazyOTP",
+tagline: "Developer-friendly OTP infrastructure for secure authentication workflows",
+description: `EazyOTP consists of a TypeScript-powered OTP microservice and a companion SDK that enables developers to integrate email verification into their applications with minimal setup.
+
+The service handles OTP generation, delivery, storage, expiration, verification, and security controls while exposing a simple developer experience.
+
+## Features
+
+* Secure OTP generation
+* Email delivery system
+* Bcrypt-based OTP storage
+* Automatic expiration management
+* SDK for quick integration
+* API key protection
+
+## Outcome
+
+A reusable authentication component designed to remove the complexity of implementing verification systems from scratch.`,
+tags: [
+"TypeScript",
+"Node.js",
+"Authentication",
+"SDK",
+"API"
+],
+coverImage: "/images/eazyotp-cover.jpg",
+screenshots: [
+"/images/eazyotp-1.jpg",
+"/images/eazyotp-2.jpg",
+"/images/eazyotp-3.jpg",
+"/images/eazyotp-4.jpg",
+],
+videoUrl: null,
+links: {
+github: "",
+npm: "",
+live: "",
+},
+featured: true,
+year: "2024",
+role: "Solo Developer",
+highlights: [
+"OTP microservice architecture",
+"Reusable npm package",
+"Email verification workflows",
+"Bcrypt-secured OTP storage",
+"Developer-focused API design",
+],
+},
+
+{
+slug: "eazywalls",
+title: "EazyWalls",
+tagline: "Wallpaper discovery platform with cloud-powered media management",
+description: `EazyWalls is a wallpaper ecosystem consisting of a native Android application and a TypeScript backend platform.
+
+The platform supports wallpaper discovery, categories, favorites, authentication, search functionality, and cloud-based image management through Cloudinary.
+
+## Technical Highlights
+
+* Native Android application
+* TypeScript backend
+* MongoDB database
+* Cloudinary media delivery
+* OTP-based account verification
+* Layered service architecture
+
+## Outcome
+
+A complete content-driven platform that explores media delivery, mobile experiences, and scalable backend design.`,
+tags: [
+"Android",
+"TypeScript",
+"MongoDB",
+"Cloudinary",
+"Express"
+],
+coverImage: "/images/eazywalls-cover.jpg",
+screenshots: [
+"/images/eazywalls-1.jpg",
+"/images/eazywalls-2.jpg",
+"/images/eazywalls-3.jpg",
+"/images/eazywalls-4.jpg",
+],
+videoUrl: null,
+links: {
+github: "",
+live: "",
+},
+featured: false,
+year: "2024",
+role: "Solo Developer",
+highlights: [
+"Native Android client",
+"Cloud-based media platform",
+"MongoDB-powered backend",
+"Authentication and favorites",
+"Category-driven discovery",
+],
+},
+
+{
+slug: "embedding-service",
+title: "Embedding Service",
+tagline: "Lightweight vector embedding API for semantic search and RAG systems",
+description: `A FastAPI microservice that converts text into vector embeddings for use in AI applications such as semantic search, recommendation systems, and retrieval-augmented generation pipelines.
+
+Built as a reusable infrastructure component, the service exposes a simple API for generating embeddings while remaining lightweight enough to deploy on low-cost environments.
+
+It serves as a foundational building block for AI-powered products and experimentation.`,
+tags: [
+"Python",
+"FastAPI",
+"Embeddings",
+"AI",
+"Vector Search"
+],
+coverImage: "/images/embedding-cover.jpg",
+screenshots: [],
+videoUrl: null,
+links: {
+github: "",
+live: "",
+},
+featured: false,
+year: "2025",
+role: "Solo Developer",
+highlights: [
+"Vector embedding generation",
+"RAG-ready architecture",
+"Semantic search support",
+"FastAPI microservice",
+"Reusable AI infrastructure",
+],
+},
 ];
