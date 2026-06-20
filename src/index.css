@@ -20,7 +20,7 @@
     --bg-nav: rgba(248, 249, 250, 0.95);
   }
 
-  .dark {
+  html.dark {
     /* Dark mode */
     --bg-base: #0A0A0A;
     --bg-elevated: #141414;
@@ -120,7 +120,7 @@
 
   /* Vercel-style dotted grid mesh background */
   .grid-mesh {
-    background-image: radial-gradient(var(--border) 1px, transparent 1px);
+    background-image: radial-gradient(var(--text-muted) 1.5px, transparent 1.5px);
     background-size: 32px 32px;
     mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 100%);
     -webkit-mask-image: radial-gradient(ellipse at 50% 50%, black 50%, transparent 100%);

@@ -2,7 +2,7 @@ export default function BackgroundVisuals() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none z-0">
       {/* ─── Dotted Grid Mesh Overlay ─── */}
-      <div className="absolute inset-0 grid-mesh opacity-[0.35] dark:opacity-[0.2]" />
+      <div className="absolute inset-0 grid-mesh opacity-[0.5] dark:opacity-[0.3]" />
 
       {/* ─── Moving Glowing Blobs ─── */}
       <div className="absolute -top-[10%] left-[10%] w-[35vw] h-[35vw] rounded-full bg-accent-muted blur-[80px] md:blur-[120px] animate-blob-1" />

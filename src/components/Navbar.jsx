@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
 
 const navLinks = [
   { label: 'Home', path: '/' },
@@ -19,9 +19,35 @@ const mobileMenuVariants = {
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    }
+    return 'dark';
+  });
+
   useEffect(() => {
     setIsMobileMenuOpen(false);
   }, [location]);
+
+  useEffect(() => {
+    const meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) {
+      meta.setAttribute('content', theme === 'dark' ? '#0A0A0A' : '#F8F9FA');
+    }
+  }, [theme]);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    if (nextTheme === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  };
 
   const isActive = (path) => {
     if (path === '/') return location.pathname === '/';
@@ -29,11 +55,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border dark text-text-primary">
+    <nav className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-border">
       <div className="max-container section-padding py-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="font-heading font-bold text-xl">
           <span className="text-text-primary">Rasid Ekbal</span>
+          <span className="text-accent">.</span>
         </Link>
 
         {/* Right side actions */}
@@ -56,6 +83,15 @@ const Navbar = () => {
           </div>
 
 
+
+          {/* Theme switcher */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg text-text-secondary hover:text-text-primary hover:bg-bg-subtle transition-colors border border-transparent hover:border-border"
+            aria-label="Toggle Theme"
+          >
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
 
           {/* Mobile hamburger */}
           <button
