@@ -300,11 +300,11 @@ const Contact = () => {
                 <div className="mb-6">
                   <p className="text-text-muted text-sm mb-1">Email</p>
                   <a
-                    href="mailto:hello@rasidekbal.com"
+                    href="mailto:rasidekbal.dev@gmail.com"
                     className="inline-flex items-center gap-2 text-text-primary hover:text-accent transition-colors"
                   >
                     <Mail className="w-4 h-4" />
-                    hello@rasidekbal.com
+                    rasidekbal.dev@gmail.com
                   </a>
                 </div>
 

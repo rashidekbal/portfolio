@@ -45,7 +45,7 @@ export default function AboutSection() {
               <motion.div variants={staggerItem} className="shrink-0 relative">
                 <div className="w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border border-border glass-effect relative z-10">
                   <img
-                    src="/images/profile_avatar.png"
+                    src="/images/profile_avatar.jpg"
                     alt="Rasid Ekbal"
                     className="w-full h-full object-cover"
                   />

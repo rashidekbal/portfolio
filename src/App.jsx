@@ -16,6 +16,15 @@ import Privacy from './pages/legal/Privacy';
 import Terms from './pages/legal/Terms';
 import Cookies from './pages/legal/Cookies';
 import NotFound from './pages/NotFound';
+import Apps from './pages/Apps';
+import Support from './pages/Support';
+import ThreadlyPrivacy from './pages/legal/ThreadlyPrivacy';
+import ThreadlyTerms from './pages/legal/ThreadlyTerms';
+import EazyWallsPrivacy from './pages/legal/EazyWallsPrivacy';
+import EazyWallsTerms from './pages/legal/EazyWallsTerms';
+import AppDetail from './pages/AppDetail';
+import ThreadlySupport from './pages/support/ThreadlySupport';
+import EazyWallsSupport from './pages/support/EazyWallsSupport';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -41,6 +50,9 @@ function AnimatedRoutes() {
       >
         <Routes location={location}>
           <Route path="/" element={<Home />} />
+          <Route path="/apps" element={<Apps />} />
+          <Route path="/apps/:slug" element={<AppDetail />} />
+          <Route path="/support" element={<Support />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/feedback" element={<Feedback />} />
@@ -48,6 +60,12 @@ function AnimatedRoutes() {
           <Route path="/legal/privacy" element={<Privacy />} />
           <Route path="/legal/terms" element={<Terms />} />
           <Route path="/legal/cookies" element={<Cookies />} />
+           <Route path="/apps/threadly/privacy" element={<ThreadlyPrivacy />} />
+          <Route path="/apps/threadly/terms" element={<ThreadlyTerms />} />
+          <Route path="/apps/threadly/support" element={<ThreadlySupport />} />
+          <Route path="/apps/eazywalls/privacy" element={<EazyWallsPrivacy />} />
+          <Route path="/apps/eazywalls/terms" element={<EazyWallsTerms />} />
+          <Route path="/apps/eazywalls/support" element={<EazyWallsSupport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>

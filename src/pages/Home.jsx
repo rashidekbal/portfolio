@@ -172,7 +172,7 @@ export default function Home() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 max-w-4xl mx-auto">
           <StatItem number={40} suffix="+" label="Repositories" />
           <StatItem number={3} suffix="+" label="Shipped Products" />
-          <StatItem number={7} suffix="+" label="Years Experience" />
+          <StatItem number={2} suffix="+" label="Years Experience" />
           <StatItem number={2} suffix="" label="External Adopters" />
         </div>
       </SectionWrapper>

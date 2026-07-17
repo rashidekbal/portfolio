@@ -174,6 +174,44 @@ export default function ProjectDetail() {
   const hasScreenshots = screenshots && screenshots.length > 0;
   const hasHighlights = highlights && highlights.length > 0;
 
+  const {
+    portraitScreenshots,
+    landscapeScreenshots,
+    screenshotIndices
+  } = useMemo(() => {
+    const portrait = [];
+    const landscape = [];
+    const indices = {};
+    if (screenshots) {
+      screenshots.forEach((src, idx) => {
+        indices[src] = idx;
+        const filename = src.split('/').pop() || '';
+        const isPort = (
+          (filename.startsWith('threadly-') && !filename.includes('admin') && !filename.includes('cover')) ||
+          (filename.startsWith('eazywalls-') && !filename.includes('admin') && !filename.includes('cover') && !filename.includes('icon'))
+        );
+        if (isPort) {
+          portrait.push(src);
+        } else {
+          landscape.push(src);
+        }
+      });
+    }
+    return { portraitScreenshots: portrait, landscapeScreenshots: landscape, screenshotIndices: indices };
+  }, [screenshots]);
+
+  const { generalDesc, techDetails } = useMemo(() => {
+    if (!description) return { generalDesc: '', techDetails: '' };
+    const headingIndex = description.indexOf('##');
+    if (headingIndex === -1) {
+      return { generalDesc: description, techDetails: '' };
+    }
+    return {
+      generalDesc: description.substring(0, headingIndex).trim(),
+      techDetails: description.substring(headingIndex).trim()
+    };
+  }, [description]);
+
   return (
     <>
       <SEOHead title={title} description={tagline} />
@@ -302,18 +340,20 @@ export default function ProjectDetail() {
                 />
               </div>
             ) : coverImage ? (
-              <div className="aspect-video rounded-xl overflow-hidden bg-bg-subtle">
+              <div className="flex justify-center items-center max-h-[500px]">
                 <img
                   src={coverImage}
                   alt={title}
-                  className="w-full h-full object-cover"
+                  className="w-auto h-auto max-h-[500px] object-contain rounded-xl"
                   onError={(e) => {
                     // Replace broken image with gradient placeholder
                     e.target.style.display = 'none';
                     e.target.parentElement.classList.add(
                       'bg-gradient-to-br',
                       'from-bg-elevated',
-                      'to-bg-subtle'
+                      'to-bg-subtle',
+                      'aspect-video',
+                      'rounded-xl'
                     );
                   }}
                 />
@@ -334,73 +374,8 @@ export default function ProjectDetail() {
             viewport={{ once: true, margin: '-80px' }}
             variants={fadeUp}
           >
-            <RenderDescription text={description} />
+            <RenderDescription text={generalDesc} />
           </motion.div>
-
-          {/* ── Screenshots Gallery ───────────────────── */}
-          {hasScreenshots && (
-            <motion.div
-              className="mt-12"
-              initial={prefersReducedMotion ? 'visible' : 'hidden'}
-              whileInView="visible"
-              viewport={{ once: true, margin: '-60px' }}
-              variants={stagger}
-            >
-              <motion.h2
-                variants={fadeUp}
-                className="text-2xl font-heading font-semibold mb-6"
-              >
-                Screenshots
-              </motion.h2>
-
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {screenshots.map((src, idx) => (
-                  <motion.button
-                    key={idx}
-                    variants={fadeUp}
-                    type="button"
-                    className="rounded-lg overflow-hidden cursor-pointer aspect-video bg-bg-subtle hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 focus:ring-offset-bg-base"
-                    onClick={() => openLightbox(idx)}
-                  >
-                    <img
-                      src={src}
-                      alt={`${title} screenshot ${idx + 1}`}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        e.target.style.display = 'none';
-                        e.target.parentElement.classList.add(
-                          'flex',
-                          'items-center',
-                          'justify-center'
-                        );
-                        const placeholder = document.createElement('span');
-                        placeholder.textContent = `Screenshot ${idx + 1}`;
-                        placeholder.className = 'text-text-muted text-sm';
-                        e.target.parentElement.appendChild(placeholder);
-                      }}
-                    />
-                  </motion.button>
-                ))}
-              </div>
-
-              <Lightbox
-                images={screenshots}
-                currentIndex={lightboxIndex}
-                isOpen={lightboxOpen}
-                onClose={() => setLightboxOpen(false)}
-                onNext={() =>
-                  setLightboxIndex((prev) =>
-                    prev < screenshots.length - 1 ? prev + 1 : 0
-                  )
-                }
-                onPrev={() =>
-                  setLightboxIndex((prev) =>
-                    prev > 0 ? prev - 1 : screenshots.length - 1
-                  )
-                }
-              />
-            </motion.div>
-          )}
 
           {/* ── Highlights ────────────────────────────── */}
           {hasHighlights && (
@@ -437,6 +412,135 @@ export default function ProjectDetail() {
               </ul>
             </motion.div>
           )}
+
+          {/* ── Architecture & Details ───────────────── */}
+          {techDetails && (
+            <motion.div
+              className="mt-12"
+              initial={prefersReducedMotion ? 'visible' : 'hidden'}
+              whileInView="visible"
+              viewport={{ once: true, margin: '-80px' }}
+              variants={fadeUp}
+            >
+              <RenderDescription text={techDetails} />
+            </motion.div>
+          )}
+
+          {/* ── Screenshots Gallery ───────────────────── */}
+          {hasScreenshots && (
+            <motion.div
+              className="mt-16 space-y-12"
+              initial={prefersReducedMotion ? 'visible' : 'hidden'}
+              whileInView="visible"
+              viewport={{ once: true, margin: '-60px' }}
+              variants={stagger}
+            >
+              {/* Landscape Gallery */}
+              {landscapeScreenshots.length > 0 && (
+                <div>
+                  <motion.h2
+                    variants={fadeUp}
+                    className="text-2xl font-heading font-semibold mb-6 text-text-primary flex items-center gap-2"
+                  >
+                    <span>Web & Admin Panel Screenshots</span>
+                    <span className="text-xs font-normal font-body px-2 py-0.5 rounded-full bg-bg-subtle border border-border text-text-secondary">
+                      Desktop View
+                    </span>
+                  </motion.h2>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                    {landscapeScreenshots.map((src) => {
+                      const idx = screenshotIndices[src];
+                      return (
+                        <motion.button
+                          key={src}
+                          variants={fadeUp}
+                          type="button"
+                          className="rounded-xl overflow-hidden cursor-pointer aspect-video bg-bg-subtle hover:opacity-85 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent border border-border/40 hover:border-accent/40 shadow-sm"
+                          onClick={() => openLightbox(idx)}
+                        >
+                          <img
+                            src={src}
+                            alt={`${title} desktop view`}
+                            className="w-full h-full object-cover"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
+                              const placeholder = document.createElement('span');
+                              placeholder.textContent = `Screenshot`;
+                              placeholder.className = 'text-text-muted text-sm';
+                              e.target.parentElement.appendChild(placeholder);
+                            }}
+                          />
+                        </motion.button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              {/* Portrait Gallery */}
+              {portraitScreenshots.length > 0 && (
+                <div>
+                  <motion.h2
+                    variants={fadeUp}
+                    className="text-2xl font-heading font-semibold mb-6 text-text-primary flex items-center gap-2"
+                  >
+                    <span>Mobile Application Screens</span>
+                    <span className="text-xs font-normal font-body px-2 py-0.5 rounded-full bg-bg-subtle border border-border text-text-secondary">
+                      Mobile View
+                    </span>
+                  </motion.h2>
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                    {portraitScreenshots.map((src) => {
+                      const idx = screenshotIndices[src];
+                      return (
+                        <motion.button
+                          key={src}
+                          variants={fadeUp}
+                          type="button"
+                          className="rounded-2xl overflow-hidden cursor-pointer aspect-[9/16] bg-bg-subtle hover:opacity-85 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent border border-border/40 hover:border-accent/40 shadow-md group relative"
+                          onClick={() => openLightbox(idx)}
+                        >
+                          <div className="absolute inset-0 border border-black/10 rounded-2xl pointer-events-none z-10" />
+                          <img
+                            src={src}
+                            alt={`${title} mobile view`}
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                            onError={(e) => {
+                              e.target.style.display = 'none';
+                              e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
+                              const placeholder = document.createElement('span');
+                              placeholder.textContent = `Mobile Screen`;
+                              placeholder.className = 'text-text-muted text-xs';
+                              e.target.parentElement.appendChild(placeholder);
+                            }}
+                          />
+                        </motion.button>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+
+              <Lightbox
+                images={screenshots}
+                currentIndex={lightboxIndex}
+                isOpen={lightboxOpen}
+                onClose={() => setLightboxOpen(false)}
+                onNext={() =>
+                  setLightboxIndex((prev) =>
+                    prev < screenshots.length - 1 ? prev + 1 : 0
+                  )
+                }
+                onPrev={() =>
+                  setLightboxIndex((prev) =>
+                    prev > 0 ? prev - 1 : screenshots.length - 1
+                  )
+                }
+              />
+            </motion.div>
+          )}
+
 
           {/* ── Prev / Next navigation ────────────────── */}
           <div className="mt-16 pt-8 border-t border-border flex justify-between items-center">

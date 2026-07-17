@@ -1,0 +1,329 @@
+import { useParams, Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Shield, FileText, HelpCircle, Download, ChevronLeft, CheckCircle2, ArrowRight } from 'lucide-react';
+import SEOHead from '../components/SEOHead';
+
+const appDetailsData = {
+  threadly: {
+    title: 'Threadly',
+    icon: '/images/threadly-icon.png',
+    tagline: 'A production-grade social media platform with real-time messaging, stories, reels, and a full social graph.',
+    category: 'Social Network',
+    lastUpdated: 'July 2026',
+    size: '28 MB',
+    requires: 'Android 10.0 and up',
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/threadly/privacy',
+    termsUrl: '/apps/threadly/terms',
+    supportUrl: '/apps/threadly/support',
+    aboutText: `Threadly is a high-performance, native social network built from the ground up to offer a fast, immersive social experience. Connect with friends, share moments through posts, stories, or reels, and communicate instantly through secure, low-latency messaging. Designed with a clean, distraction-free aesthetic and smooth transition animations, Threadly puts your social connections and content first.`,
+    features: [
+      {
+        title: 'Real-Time Messaging',
+        desc: 'Send messages instantly with delivery indicators and read receipts. Features dynamic group chat support and offline delivery synchronization.'
+      },
+      {
+        title: 'Stories & Video Reels',
+        desc: 'Share short video clips or disappearing photos using the high-performance CameraX camera module and custom media encoder.'
+      },
+      {
+        title: 'Rich Content Feeds',
+        desc: 'Upload high-resolution images and videos. Customize your feed, leave nested comment replies, and interact with post likes.'
+      },
+      {
+        title: 'Advanced Local Caching',
+        desc: 'Browser feeds even while offline. Threadly leverages local database replication to ensure your social experience is never interrupted.'
+      },
+      {
+        title: 'Verified Access Control',
+        desc: 'Registration is secured by verification codes sent to your email or phone, preventing spoofing and spam accounts.'
+      }
+    ],
+    screenshots: [
+      '/images/threadly-2.jpg',
+      '/images/threadly-3.jpg',
+      '/images/threadly-4.jpg',
+      '/images/threadly-5.jpg',
+      '/images/threadly-6.jpg'
+    ]
+  },
+  eazywalls: {
+    title: 'EazyWalls',
+    icon: '/images/eazywalls-icon.png',
+    tagline: 'A curated wallpaper discovery platform with high-resolution collection feeds and category exploration.',
+    category: 'Personalization / Lifestyle',
+    lastUpdated: 'July 2026',
+    size: '14 MB',
+    requires: 'Android 9.0 and up',
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/eazywalls/privacy',
+    termsUrl: '/apps/eazywalls/terms',
+    supportUrl: '/apps/eazywalls/support',
+    aboutText: `EazyWalls is a gorgeous personalization application designed to bring premium, hand-picked digital art directly to your phone screen. Explore beautifully categorized grids, customize your home or lock screen with one-tap set actions, and save high-resolution imagery for offline viewing. Built to handle heavy visual feeds smoothly and efficiently.`,
+    features: [
+      {
+        title: 'Daily Curated Feed',
+        desc: 'Explore new additions uploaded by verified creators. Discover wallpapers categorized into Abstract, Anime, Pattern, Minimal, and more.'
+      },
+      {
+        title: 'One-Tap Application',
+        desc: 'Apply wallpapers instantly to your home screen, lock screen, or both directly inside the app with full-screen cropping previews.'
+      },
+      {
+        title: 'High-Res Downloads',
+        desc: 'Get access to uncompressed, high-fidelity files optimized via dynamic CDN nodes for fast, low-bandwidth data transfers.'
+      },
+      {
+        title: 'Vibrant Shimmer UI',
+        desc: 'Experience smooth scrolling with lazy image loading and elegant placeholder states for maximum perceived performance.'
+      },
+      {
+        title: 'Favorites System',
+        desc: 'Create your personal gallery by saving wallpapers to your account, syncing them automatically across all your devices.'
+      }
+    ],
+    screenshots: [
+      '/images/eazywalls-1.jpg',
+      '/images/eazywalls-2.jpg',
+      '/images/eazywalls-3.jpg',
+      '/images/eazywalls-4.jpg'
+    ]
+  }
+};
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } }
+};
+
+const fadeUpVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } }
+};
+
+export default function AppDetail() {
+  const { slug } = useParams();
+  const app = appDetailsData[slug?.toLowerCase()];
+
+  if (!app) {
+    return (
+      <div className="min-h-screen flex items-center justify-center pt-24 text-center">
+        <div>
+          <h1 className="text-3xl font-heading font-bold mb-4">App Not Found</h1>
+          <p className="text-text-secondary mb-6">The requested application does not exist or has been removed.</p>
+          <Link to="/apps" className="text-accent hover:underline flex items-center justify-center gap-2">
+            <ChevronLeft size={16} /> Back to published apps
+          </Link>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <SEOHead
+        title={`${app.title} — Google Play Store App`}
+        description={app.tagline}
+      />
+
+      <div className="min-h-screen pt-32 pb-24 relative overflow-hidden">
+        {/* Decorative backdrop gradients matching Obsidian Pulse design system */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="max-container section-padding">
+          {/* Back button */}
+          <Link
+            to="/apps"
+            className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors mb-10 group"
+          >
+            <ChevronLeft size={16} className="group-hover:-translate-x-1 transition-transform" />
+            <span className="text-sm font-medium">All Apps</span>
+          </Link>
+
+          {/* Hero Section */}
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-12 items-center mb-16">
+            <div className="md:col-span-1 flex justify-center md:justify-start">
+              <img
+                src={app.icon}
+                alt={`${app.title} icon`}
+                className="w-32 h-32 md:w-40 md:h-40 rounded-[28px] object-cover shadow-xl border border-border/40"
+              />
+            </div>
+            <div className="md:col-span-3 text-center md:text-left">
+              <span className="px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold uppercase tracking-wider">
+                {app.category}
+              </span>
+              <h1 className="text-4xl md:text-5xl font-heading font-bold mt-3 mb-4 text-text-primary">
+                {app.title}
+              </h1>
+              <p className="text-text-secondary text-lg mb-6 max-w-2xl">
+                {app.tagline}
+              </p>
+
+              {/* Get App and Support actions */}
+              <div className="flex flex-wrap items-center justify-center md:justify-start gap-4">
+                <a
+                  href={app.googlePlayUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-hover text-bg-base font-semibold rounded-xl transition-all shadow-lg shadow-accent/10 hover:shadow-accent/20 active:scale-98"
+                >
+                  <Download size={20} />
+                  <span>Download on Google Play</span>
+                </a>
+                <Link
+                  to={app.supportUrl}
+                  className="flex items-center gap-1.5 px-5 py-3 bg-bg-elevated hover:bg-bg-subtle border border-border/50 text-text-primary font-medium rounded-xl transition-all"
+                >
+                  <span>Support Center</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats Bar */}
+          <div className="grid grid-cols-3 gap-4 py-6 border-y border-border/40 max-w-3xl mb-16 text-center">
+            <div>
+              <p className="text-text-muted text-xs uppercase tracking-wider mb-1">File Size</p>
+              <p className="text-text-primary font-bold text-lg">{app.size}</p>
+            </div>
+            <div>
+              <p className="text-text-muted text-xs uppercase tracking-wider mb-1">Required OS</p>
+              <p className="text-text-primary font-bold text-lg">{app.requires}</p>
+            </div>
+            <div>
+              <p className="text-text-muted text-xs uppercase tracking-wider mb-1">Latest Version</p>
+              <p className="text-text-primary font-bold text-lg">v1.0.8</p>
+            </div>
+          </div>
+
+          {/* Detailed Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            {/* Left Col: Description & Features */}
+            <div className="lg:col-span-2 space-y-12">
+              {/* About section */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-50px' }}
+                variants={fadeUpVariants}
+              >
+                <h2 className="text-2xl font-heading font-bold mb-4 text-text-primary">
+                  About {app.title}
+                </h2>
+                <p className="text-text-secondary leading-relaxed whitespace-pre-line">
+                  {app.aboutText}
+                </p>
+              </motion.div>
+
+              {/* Features list */}
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-50px' }}
+                variants={fadeUpVariants}
+              >
+                <h2 className="text-2xl font-heading font-bold mb-6 text-text-primary">
+                  Key Features
+                </h2>
+                <div className="space-y-6">
+                  {app.features.map((feature, idx) => (
+                    <div key={idx} className="flex gap-4">
+                      <div className="flex-shrink-0 mt-1">
+                        <CheckCircle2 className="text-accent w-6 h-6" />
+                      </div>
+                      <div>
+                        <h3 className="font-heading font-semibold text-text-primary text-lg mb-1">
+                          {feature.title}
+                        </h3>
+                        <p className="text-text-secondary text-sm leading-relaxed">
+                          {feature.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Right Col: App Screenshots & Metadata sidebar */}
+            <div className="lg:col-span-1 space-y-8">
+              {/* Screenshots gallery */}
+              <div>
+                <h3 className="text-lg font-heading font-bold mb-4 text-text-primary">
+                  App Screenshots
+                </h3>
+                {/* Horizontal slider container */}
+                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin snap-x snap-mandatory">
+                  {app.screenshots.map((shot, idx) => (
+                    <div
+                      key={idx}
+                      className="w-48 md:w-56 flex-shrink-0 snap-start rounded-2xl overflow-hidden border border-border/30 bg-bg-elevated"
+                    >
+                      <img
+                        src={shot}
+                        alt={`${app.title} screenshot ${idx + 1}`}
+                        className="w-full object-contain"
+                        loading="lazy"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Developer & Legal info card */}
+              <div className="bg-bg-elevated border border-border p-6 rounded-2xl">
+                <h3 className="text-lg font-heading font-bold text-text-primary mb-4">
+                  Information
+                </h3>
+                <div className="space-y-4 text-sm">
+                  <div className="flex justify-between py-2 border-b border-border/30">
+                    <span className="text-text-muted">Developer</span>
+                    <span className="text-text-primary font-medium">Rasid Ekbal</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-border/30">
+                    <span className="text-text-muted">Publisher</span>
+                    <span className="text-text-primary font-medium">Rasid Apps</span>
+                  </div>
+                  <div className="flex justify-between py-2 border-b border-border/30">
+                    <span className="text-text-muted">Updated</span>
+                    <span className="text-text-primary font-medium">{app.lastUpdated}</span>
+                  </div>
+                  <div className="flex justify-between py-2">
+                    <span className="text-text-muted">Content Rating</span>
+                    <span className="text-text-primary font-medium">PEGI 3 (Everyone)</span>
+                  </div>
+                </div>
+
+                <div className="border-t border-border/40 pt-6 mt-6 space-y-3">
+                  <Link
+                    to={app.privacyUrl}
+                    className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors"
+                  >
+                    <Shield size={16} />
+                    <span>Privacy Policy</span>
+                  </Link>
+                  <Link
+                    to={app.termsUrl}
+                    className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors"
+                  >
+                    <FileText size={16} />
+                    <span>Terms of Service</span>
+                  </Link>
+                  <Link
+                    to={app.supportUrl}
+                    className="flex items-center gap-2 text-sm text-text-secondary hover:text-accent transition-colors"
+                  >
+                    <HelpCircle size={16} />
+                    <span>Support Center</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
