@@ -14,7 +14,8 @@ const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // TODO: Replace
 const appOptions = [
   { value: '', label: 'Select App' },
   { value: 'threadly', label: 'Threadly (Social Media)' },
-  { value: 'eazywalls', label: 'EazyWalls (Wallpaper Discover)' }
+  { value: 'eazywalls', label: 'EazyWalls (Wallpaper Discover)' },
+  { value: '4k-media-player', label: '4K Media Player (Media Player)' }
 ];
 
 export default function Support() {
@@ -326,6 +327,13 @@ export default function Support() {
                       <div className="space-x-2">
                         <a href="/apps/eazywalls/privacy" className="text-accent hover:underline">Privacy</a>
                         <a href="/apps/eazywalls/terms" className="text-accent hover:underline">Terms</a>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="font-medium">4K Media Player:</span>
+                      <div className="space-x-2">
+                        <a href="/apps/4k-media-player/privacy" className="text-accent hover:underline">Privacy</a>
+                        <a href="/apps/4k-media-player/terms" className="text-accent hover:underline">Terms</a>
                       </div>
                     </div>
                   </div>

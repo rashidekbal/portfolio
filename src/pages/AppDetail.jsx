@@ -88,6 +88,54 @@ const appDetailsData = {
       '/images/eazywalls-3.jpg',
       '/images/eazywalls-4.jpg'
     ]
+  },
+  '4k-media-player': {
+    title: '4K Media Player',
+    icon: '/images/videoplayer-icon.png',
+    tagline: 'A premium, native Android media player with Room DB caching, custom overlays, and foreground playback services.',
+    category: 'Video Players & Editors',
+    lastUpdated: 'July 2026',
+    size: '18 MB',
+    requires: 'Android 8.0 and up',
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/4k-media-player/privacy',
+    termsUrl: '/apps/4k-media-player/terms',
+    supportUrl: '/apps/4k-media-player/support',
+    aboutText: `4K Media Player is a premium offline media playback utility built natively for Android. It enables smooth, hardware-accelerated rendering of all major video and audio formats. Designed with a clean Material Design aesthetic, the application provides persistent playback history, intelligent queue control, and seamless background execution.`,
+    features: [
+      {
+        title: 'ExoPlayer Render Pipeline',
+        desc: 'Leverages Jetpack Media3 ExoPlayer for low-latency playback of standard and ultra-high-definition video codecs.'
+      },
+      {
+        title: 'Persistent Room Caching',
+        desc: 'Saves your active tracks, playback queue, and last playhead position inside a local SQLite Room DB to resume exactly where you left off.'
+      },
+      {
+        title: 'True Background Playback',
+        desc: 'Integrates MediaSessionService to support system-level audio controls, active notification controls, and screen-off execution.'
+      },
+      {
+        title: 'On-Screen Lock & Controls',
+        desc: 'Block screen touches during playback, toggle orientations instantly, and toggle audio speed (1.0x to 2.0x) on-the-fly.'
+      },
+      {
+        title: 'Dynamic Playlist Queue',
+        desc: 'Hop between tracks and modify active playback lists inside an elegant bottom-sheet controller.'
+      }
+    ],
+    screenshots: [
+      '/images/videoplayer/1.jpg',
+      '/images/videoplayer/2.jpg',
+      '/images/videoplayer/3.jpg',
+      '/images/videoplayer/4.jpg',
+      '/images/videoplayer/5.jpg',
+      '/images/videoplayer/6.jpg',
+      '/images/videoplayer/7.jpg',
+      '/images/videoplayer/8.jpg',
+      '/images/videoplayer/9.jpg',
+      '/images/videoplayer/10.jpg'
+    ]
   }
 };
 

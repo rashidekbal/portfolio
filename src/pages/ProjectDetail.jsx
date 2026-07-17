@@ -188,7 +188,8 @@ export default function ProjectDetail() {
         const filename = src.split('/').pop() || '';
         const isPort = (
           (filename.startsWith('threadly-') && !filename.includes('admin') && !filename.includes('cover')) ||
-          (filename.startsWith('eazywalls-') && !filename.includes('admin') && !filename.includes('cover') && !filename.includes('icon'))
+          (filename.startsWith('eazywalls-') && !filename.includes('admin') && !filename.includes('cover') && !filename.includes('icon')) ||
+          src.includes('/videoplayer/')
         );
         if (isPort) {
           portrait.push(src);

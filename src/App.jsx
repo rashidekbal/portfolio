@@ -25,6 +25,10 @@ import EazyWallsTerms from './pages/legal/EazyWallsTerms';
 import AppDetail from './pages/AppDetail';
 import ThreadlySupport from './pages/support/ThreadlySupport';
 import EazyWallsSupport from './pages/support/EazyWallsSupport';
+import VideoPlayerPrivacy from './pages/legal/VideoPlayerPrivacy';
+import VideoPlayerTerms from './pages/legal/VideoPlayerTerms';
+import VideoPlayerSupport from './pages/support/VideoPlayerSupport';
+
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -66,6 +70,9 @@ function AnimatedRoutes() {
           <Route path="/apps/eazywalls/privacy" element={<EazyWallsPrivacy />} />
           <Route path="/apps/eazywalls/terms" element={<EazyWallsTerms />} />
           <Route path="/apps/eazywalls/support" element={<EazyWallsSupport />} />
+          <Route path="/apps/4k-media-player/privacy" element={<VideoPlayerPrivacy />} />
+          <Route path="/apps/4k-media-player/terms" element={<VideoPlayerTerms />} />
+          <Route path="/apps/4k-media-player/support" element={<VideoPlayerSupport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>

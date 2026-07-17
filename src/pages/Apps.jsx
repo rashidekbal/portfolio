@@ -43,6 +43,26 @@ const publishedApps = [
     supportUrl: '/apps/eazywalls/support',
     projectUrl: '/projects/eazywalls',
     tech: ['Java', 'Android SDK', 'MVVM', 'Room', 'Glide', 'Cloudinary']
+  },
+  {
+    slug: '4k-media-player',
+    title: '4K Media Player',
+    icon: '/images/videoplayer-icon.png',
+    tagline: 'A premium, native Android media player with Room DB caching, custom overlays, and foreground playback services.',
+    description: '4K Media Player is a native Android media utility designed to browse, manage, and play local audio and video files. It leverages Media3 ExoPlayer for low-latency playback pipelines and incorporates a persistent background music service.',
+    features: [
+      'ExoPlayer-backed low-latency video playback controller',
+      'Robust background playback service via MediaSessionService',
+      'SQLite Room database for persistent state restoration and play history',
+      'Custom controller overlay featuring speed control, screen lock, and orientation options',
+      'Dynamic search and local files organization'
+    ],
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/4k-media-player/privacy',
+    termsUrl: '/apps/4k-media-player/terms',
+    supportUrl: '/apps/4k-media-player/support',
+    projectUrl: '/projects/4k-media-player',
+    tech: ['Java', 'Android SDK', 'Jetpack Media3', 'Room', 'MVVM', 'Material Design']
   }
 ];
 

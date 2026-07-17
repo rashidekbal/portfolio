@@ -94,7 +94,7 @@ screenshots: [
 ],
 videoUrl: null,
 links: {
-github: "",
+github: "https://github.com/rashidekbal/threadly",
 live: "",
 },
 featured: true,
@@ -175,7 +175,7 @@ screenshots: [
 ],
 videoUrl: null,
 links: {
-github: "",
+github: "https://github.com/rashidekbal/EazyShare",
 live: "",
 },
 featured: true,
@@ -288,7 +288,7 @@ screenshots: [
 ],
 videoUrl: null,
 links: {
-github: "",
+github: "https://github.com/rashidekbal/EazyWalls",
 live: "",
 },
 featured: true,
@@ -351,7 +351,7 @@ coverImage: "/images/eazyotp-cover.jpg",
 screenshots: [],
 videoUrl: null,
 links: {
-github: "",
+github: "https://github.com/rashidekbal/eazy-opt-client",
 live: "",
 },
 featured: true,
@@ -367,5 +367,73 @@ highlights: [
 "Fully containerized with Docker for seamless cloud-native deployments",
 ],
 },
+{
+  slug: "4k-media-player",
+  title: "4K Media Player",
+  tagline: "A premium, native Android media player with Room DB caching, custom overlays, and background MediaSession service",
+  description: `4K Media Player is a native Android media utility designed to browse, manage, and play local audio and video files. It leverages Jetpack Media3 ExoPlayer for low-latency playback pipelines and incorporates a persistent background music service via MediaSessionService.
 
+## Architecture
+
+The project is built using a clean MVVM (Model-View-ViewModel) architecture. It cleanly separates the playback engine and media querying from the UI layer to achieve high performance and stability.
+
+Media items are fetched from the system using a custom Repository which queries the device MediaStore. Playback position caching and history tracking are handled locally by a Room SQLite database, enabling the application to resume playback seamlessly.
+
+## Technologies & Infrastructure
+
+- **Language**: Java 17 for native Android development
+- **Playback Engine**: Jetpack Media3 ExoPlayer for low-latency video and audio media pipelines
+- **Background Support**: Jetpack Media3 Session API and MediaSessionService for OS-level background playback and notifications
+- **Database**: Room Database with SQLite for play history caching and position restoration
+- **UI Design**: Material Components and responsive layout xmls backing 6 screen-size buckets (sw240dp to sw720dp)
+- **View Binding**: ViewBinding for type-safe, compile-time view references
+
+## Key Features
+
+- **Singleton Playback Pipeline**: Utilizes a single ExoPlayer instance to manage resource allocation and ensure instantaneous video loading.
+- **Custom Player Overlay**: Custom-built UI controls featuring play/pause, seek track bar, previous/next, and live timestamp updates.
+- **On-the-fly Speed Selector**: Instantly cycle playback speed through 1.0x, 1.25x, 1.5x, and 2.0x.
+- **Intelligent Screen Lock**: Disable standard player controls with a single tap to prevent accidental touches during playback.
+- **Orientation Toggle**: Dynamically rotate screen orientation (portrait/landscape) via overlay control.
+- **True Background Playback**: Foreground service implementation with OS-level integrations using MediaSessionService and active notification controllers.
+- **Dynamic Queue Management**: Interactive bottom sheet showing current tracks; allows instant track hopping.
+- **Recents & History Dashboard**: Quick access to recently played files with automatic cleanup of missing/deleted files from the list.`,
+  tags: [
+    "Java",
+    "Android SDK",
+    "Jetpack Media3",
+    "Room",
+    "MVVM",
+    "Material Design"
+  ],
+  coverImage: "/images/4k-media-player-cover.jpg",
+  screenshots: [
+    "/images/videoplayer/1.jpg",
+    "/images/videoplayer/2.jpg",
+    "/images/videoplayer/3.jpg",
+    "/images/videoplayer/4.jpg",
+    "/images/videoplayer/5.jpg",
+    "/images/videoplayer/6.jpg",
+    "/images/videoplayer/7.jpg",
+    "/images/videoplayer/8.jpg",
+    "/images/videoplayer/9.jpg",
+    "/images/videoplayer/10.jpg"
+  ],
+  videoUrl: null,
+  links: {
+    github: "https://github.com/rashidekbal/4K-video-Player",
+    live: ""
+  },
+  featured: true,
+  year: "2024",
+  role: "Solo Developer",
+  highlights: [
+    "Singleton ExoPlayer design for rapid, low-latency local media loading",
+    "Full background playback via MediaSessionService with custom notification controls",
+    "Local-first SQLite state caching using Room database for playback position restoration",
+    "Responsive styling and custom dimens supporting 6 screen sizes (sw240dp to sw720dp)",
+    "Clean MVVM architecture decoupling media query repository from the view controllers",
+    "On-screen Lock Mode and Orientation Toggle controls built into custom player overlay"
+  ]
+}
 ];
