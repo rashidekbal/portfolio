@@ -306,4 +306,66 @@ highlights: [
 ],
 },
 
+{
+slug: "eazyotp",
+title: "EazyOTP",
+tagline: "A secure, developer-friendly OTP microservice for cryptographically-proven identity verification",
+description: `EazyOTP is a high-performance, developer-focused OTP (One-Time Password) verification microservice built from the ground up to solve registration spoofing and simplify multi-channel identity validation. Instead of forcing parent applications to manage OTP lifetime, verification state, and SMS/email providers, EazyOTP operates as a decoupled gateway.
+
+The service's core architectural innovation is its **cryptographically signed proof token flow**. When a user requests an OTP, EazyOTP handles the transient storage, throttling, and delivery. Upon successful verification, EazyOTP returns a short-lived, cryptographically signed JWT to the client. The client then presents this JWT to the parent application's registration endpoint, which decodes the token to retrieve the verified email or phone number. This prevents spoofing attacks where malicious users try to register an account with a different email address than the one verified.
+
+## Architecture
+
+EazyOTP is built with a clean, modular structure leveraging Node.js and TypeScript, designed to be highly reliable, low-latency, and horizontally scalable. It divides responsibilities into specialized service providers, decoupling the delivery channel (SMS, Email) from the core verification and rate-limiting logic.
+
+Transient data—such as active OTP codes, attempt counts, and cooldown states—lives in Redis. By leveraging Redis's native Time-To-Live (TTL) feature, EazyOTP guarantees that expired codes are automatically purged from memory without requiring background cleanups.
+
+## Technologies & Infrastructure
+
+- **Language & Runtime**: Node.js with TypeScript in strict mode for complete type safety
+- **Framework**: Express.js with custom middleware for rate-limiting, error handling, and request validation
+- **Data Store**: Redis for rapid, transient OTP storage with automatic TTL-based expiration
+- **Authentication**: JsonWebToken (JWT) for issuing cryptographic proofs of verification
+- **Communication Channels**: Nodemailer (SMTP) for email delivery and Twilio API integration for SMS delivery
+- **Testing**: Jest and Supertest for unit, integration, and API endpoint testing
+- **Deployment**: Docker containerization for instant, reproducible deployments on cloud platforms
+
+## Key Features
+
+- **Cryptographic Verification Proofs**: Returns a signed JWT upon verification, making it impossible for clients to spoof verified identities to the parent API
+- **Redis-Backed Lifecycle**: OTP codes are stored in Redis with an automatic TTL match (e.g., 5 minutes), ensuring zero persistent storage overhead
+- **Anti-Brute Force Protection**: Automatic IP-based and target-based rate-limiting, capping maximum verification attempts per OTP to 3 before invalidation
+- **Request Throttling**: Cooldown enforcement (e.g., 60 seconds between resends) to prevent API abuse and control communication provider costs
+- **Channel Abstraction**: Modular provider interface supporting quick swaps between SMTP, Twilio, or mock providers for local development
+- **Comprehensive API Documentation**: Clean REST endpoints with JSON schemas for seamless integration into any frontend or backend system
+- **Docker-Ready**: Packaged with multi-stage Dockerfiles for optimized production builds and minimal container footprint`,
+tags: [
+"TypeScript",
+"Node.js",
+"Redis",
+"Express",
+"JWT",
+"Docker"
+],
+coverImage: "/images/eazyotp-cover.jpg",
+screenshots: [],
+videoUrl: null,
+links: {
+github: "",
+live: "",
+},
+featured: true,
+year: "2024",
+role: "Solo Developer",
+highlights: [
+"Cryptographic proof flow: returns a signed JWT upon verification to prevent registration spoofing",
+"Redis-backed transient lifecycle management with automatic TTL-based expiry",
+"Multi-channel delivery support including SMTP (Nodemailer) and SMS (Twilio)",
+"Anti-brute force security: invalidates OTPs after 3 failed verification attempts",
+"IP and identifier-based rate limiting to prevent spam and control SMS costs",
+"Strict TypeScript implementation with full unit and integration test coverage",
+"Fully containerized with Docker for seamless cloud-native deployments",
+],
+},
+
 ];
