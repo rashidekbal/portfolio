@@ -480,7 +480,7 @@ The application features a custom-built attendance engine (AttendanceScheduleUti
       "App Widgets",
       "SQLite"
     ],
-    coverImage: "/images/attend-cover.jpg",
+    coverImage: "/images/attend/cover.jpeg",
     screenshots: [
       "/images/attend/Screenshot_20260815_220741.jpg",
       "/images/attend/Screenshot_20260815_220743.jpg",
