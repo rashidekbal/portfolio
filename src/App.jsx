@@ -28,6 +28,9 @@ import EazyWallsSupport from './pages/support/EazyWallsSupport';
 import VideoPlayerPrivacy from './pages/legal/VideoPlayerPrivacy';
 import VideoPlayerTerms from './pages/legal/VideoPlayerTerms';
 import VideoPlayerSupport from './pages/support/VideoPlayerSupport';
+import AttendPrivacy from './pages/legal/AttendPrivacy';
+import AttendTerms from './pages/legal/AttendTerms';
+import AttendSupport from './pages/support/AttendSupport';
 
 
 function ScrollToTop() {
@@ -73,6 +76,9 @@ function AnimatedRoutes() {
           <Route path="/apps/4k-media-player/privacy" element={<VideoPlayerPrivacy />} />
           <Route path="/apps/4k-media-player/terms" element={<VideoPlayerTerms />} />
           <Route path="/apps/4k-media-player/support" element={<VideoPlayerSupport />} />
+          <Route path="/apps/attend/privacy" element={<AttendPrivacy />} />
+          <Route path="/apps/attend/terms" element={<AttendTerms />} />
+          <Route path="/apps/attend/support" element={<AttendSupport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>

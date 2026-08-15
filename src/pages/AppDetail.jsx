@@ -136,6 +136,66 @@ const appDetailsData = {
       '/images/videoplayer/9.jpg',
       '/images/videoplayer/10.jpg'
     ]
+  },
+  attend: {
+    title: 'Attend',
+    icon: '/images/attend-icon.png',
+    tagline: 'An intelligent, period-weighted college attendance tracker and academic planner built natively for Android.',
+    category: 'Education / Productivity',
+    lastUpdated: 'August 2026',
+    size: '12 MB',
+    requires: 'Android 8.0 and up',
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/attend/privacy',
+    termsUrl: '/apps/attend/terms',
+    supportUrl: '/apps/attend/support',
+    aboutText: `Attend is a comprehensive academic companion engineered for university students. Built with an intelligent, period-weighted calculation engine, Attend accounts for varying daily timetables, multi-hour lab sessions, and dynamic institutional attendance criteria. With smart "Safe to Bunk" formulas, exam mark analytics, assignment deadline trackers, and a launcher home screen widget, Attend ensures you stay comfortably ahead of your academic requirements with zero cloud dependency.`,
+    features: [
+      {
+        title: 'Period-Weighted Attendance Math',
+        desc: 'Accurately calculates percentages by cross-referencing logs with scheduled period hours, handling 2-hour labs and differing daily period allocations perfectly.'
+      },
+      {
+        title: 'Safe-to-Bunk & Recovery Analytics',
+        desc: 'Live calculation indicates exactly how many consecutive sessions you can skip safely without dipping below threshold, or how many you need to attend to recover.'
+      },
+      {
+        title: 'Assignment & Deadline Management',
+        desc: 'Track academic tasks and assignments with dynamic countdowns, submission statuses, and overdue alert badges.'
+      },
+      {
+        title: 'Mid-Sem Marks Hub',
+        desc: 'Log and analyze internal examination scores across Mid Sem 1, 2, and 3 with target benchmark indicators and subject trend insights.'
+      },
+      {
+        title: 'Launcher App Widget',
+        desc: 'Instant attendance percentage and bunk safety visibility directly from your Android home screen launcher.'
+      }
+    ],
+    screenshots: [
+      '/images/attend/Screenshot_20260815_220741.jpg',
+      '/images/attend/Screenshot_20260815_220743.jpg',
+      '/images/attend/Screenshot_20260815_220746.jpg',
+      '/images/attend/Screenshot_20260815_220829.jpg',
+      '/images/attend/Screenshot_20260815_220839.jpg',
+      '/images/attend/Screenshot_20260815_220845.jpg',
+      '/images/attend/Screenshot_20260815_220849.jpg',
+      '/images/attend/Screenshot_20260815_220853.jpg',
+      '/images/attend/Screenshot_20260815_220856.jpg',
+      '/images/attend/Screenshot_20260815_220859.jpg',
+      '/images/attend/Screenshot_20260815_220918.jpg',
+      '/images/attend/Screenshot_20260815_220948.jpg',
+      '/images/attend/Screenshot_20260815_220950.jpg',
+      '/images/attend/Screenshot_20260815_220951.jpg',
+      '/images/attend/Screenshot_20260815_220956.jpg',
+      '/images/attend/Screenshot_20260815_220959.jpg',
+      '/images/attend/Screenshot_20260815_221000.jpg',
+      '/images/attend/Screenshot_20260815_221004.jpg',
+      '/images/attend/Screenshot_20260815_221006.jpg',
+      '/images/attend/Screenshot_20260815_221007.jpg',
+      '/images/attend/Screenshot_20260815_221044.jpg',
+      '/images/attend/Screenshot_20260815_221116.jpg'
+    ]
   }
 };
 

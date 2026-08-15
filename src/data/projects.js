@@ -435,5 +435,91 @@ Media items are fetched from the system using a custom Repository which queries 
     "Clean MVVM architecture decoupling media query repository from the view controllers",
     "On-screen Lock Mode and Orientation Toggle controls built into custom player overlay"
   ]
-}
+},
+  {
+    slug: "attend",
+    title: "Attend",
+    tagline: "An intelligent, period-weighted college attendance tracker and academic planner built natively for Android",
+    description: `Attend is a native Android application engineered for university and college students to eliminate manual attendance calculations, track multi-period schedules and labs, manage coursework assignments, and analyze examination marks.
+
+The app addresses complex academic realities: differing period counts per subject across days, multi-hour lab sessions, strict minimum percentage thresholds (e.g., 75%), mid-semester assessment benchmarking, and dynamic assignment deadlines.
+
+## Architecture
+
+Attend follows a robust MVVM (Model-View-ViewModel) architecture implemented cleanly in Java 17 with Android Architecture Components. Data access is abstracted through Room Database with a centralized DbHelper facade and background ExecutorService threading.
+
+The application features a custom-built attendance engine (AttendanceScheduleUtil) that serves as the single source of truth across ViewModels, UI adapters, and Android App Widgets. Rather than relying on simple binary tallies, the engine calculates period-weighted statistics dynamically by cross-referencing subject schedules with attendance log history.
+
+## Android Architecture & Engineering
+
+- **Architecture**: MVVM with LiveData, ViewModel, and clean separation of concerns
+- **Language**: Java 17 leveraging modern syntax, lambdas, and method references
+- **Persistence**: Room Database (SQLite) with relational DAOs for Attendance, Subjects, Timetables, Marks, Assignments, and Holidays
+- **Threading**: Dedicated ExecutorService for background database operations with UI Main Handler callbacks
+- **View Layer**: ViewBinding across all activities, fragments, dialogs, and RecyclerView adapters
+- **Background Tasks & Alerts**: AlarmManager and BroadcastReceiver pipelines for morning class reminders and assignment alerts
+- **Launcher Widget**: Android AppWidgetProvider displaying live attendance percentages and safe-to-bunk statuses directly on the user's home screen
+- **Theming**: Dynamic accent color engine with light and dark mode toggles
+
+## Key Features
+
+- **Period-Weighted Attendance Math**: Dynamically weighs multi-period and lab sessions against daily schedules for 100% accurate percentage calculations
+- **Smart Safe-to-Bunk Calculator**: Tells students exactly how many classes they can skip without dropping below threshold, or how many to attend to recover
+- **Comprehensive Daily Logger**: Mark Present, Absent, or Cancelled (auto-excluded from total conducted hours) with instant backfilling
+- **Mid-Sem Marks Hub**: Record assessment scores for Mid Sem 1, 2, and 3 with subject trend analysis and benchmark comparisons
+- **Assignment Tracker**: Manage task deadlines with real-time countdowns, status chips (Due, Overdue, Submitted), and one-tap submission toggles
+- **Master Timetable & Custom Duration**: Weekly schedule configuration supporting 5-day or 6-day weeks with flexible period lengths
+- **Automated Holiday Exclusion**: Scheduled breaks and holidays are auto-excluded from required attendance and reminder alerts
+- **100% Offline & Private**: Zero cloud dependency, zero telemetry, full local-first SQLite persistence`,
+    tags: [
+      "Android",
+      "Java",
+      "MVVM",
+      "Room",
+      "Material Design",
+      "App Widgets",
+      "SQLite"
+    ],
+    coverImage: "/images/attend-cover.jpg",
+    screenshots: [
+      "/images/attend/Screenshot_20260815_220741.jpg",
+      "/images/attend/Screenshot_20260815_220743.jpg",
+      "/images/attend/Screenshot_20260815_220746.jpg",
+      "/images/attend/Screenshot_20260815_220829.jpg",
+      "/images/attend/Screenshot_20260815_220839.jpg",
+      "/images/attend/Screenshot_20260815_220845.jpg",
+      "/images/attend/Screenshot_20260815_220849.jpg",
+      "/images/attend/Screenshot_20260815_220853.jpg",
+      "/images/attend/Screenshot_20260815_220856.jpg",
+      "/images/attend/Screenshot_20260815_220859.jpg",
+      "/images/attend/Screenshot_20260815_220918.jpg",
+      "/images/attend/Screenshot_20260815_220948.jpg",
+      "/images/attend/Screenshot_20260815_220950.jpg",
+      "/images/attend/Screenshot_20260815_220951.jpg",
+      "/images/attend/Screenshot_20260815_220956.jpg",
+      "/images/attend/Screenshot_20260815_220959.jpg",
+      "/images/attend/Screenshot_20260815_221000.jpg",
+      "/images/attend/Screenshot_20260815_221004.jpg",
+      "/images/attend/Screenshot_20260815_221006.jpg",
+      "/images/attend/Screenshot_20260815_221007.jpg",
+      "/images/attend/Screenshot_20260815_221044.jpg",
+      "/images/attend/Screenshot_20260815_221116.jpg"
+    ],
+    videoUrl: null,
+    links: {
+      github: "https://github.com/rashidekbal/Attend-College-Attendance-Tracker",
+      live: ""
+    },
+    featured: true,
+    year: "2026",
+    role: "Solo Developer",
+    highlights: [
+      "Period-weighted attendance engine with multi-hour lab support and safe-to-bunk calculator",
+      "Interactive assignment manager with dynamic due countdowns and one-tap submission status",
+      "Mid-sem exam performance tracking with internal benchmark analytics across 3 assessment cycles",
+      "Home screen App Widget with live percentage updates and bunk safety warnings",
+      "Dynamic accent color theming engine with full dark and light mode support",
+      "Offline-first Room SQLite architecture with DbHelper facade and background executor threading"
+    ]
+  }
 ];
