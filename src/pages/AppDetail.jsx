@@ -1,7 +1,9 @@
+import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Shield, FileText, HelpCircle, Download, ChevronLeft, CheckCircle2, ArrowRight } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
+import Lightbox from '../components/Lightbox';
 
 const appDetailsData = {
   threadly: {
@@ -212,6 +214,8 @@ const fadeUpVariants = {
 export default function AppDetail() {
   const { slug } = useParams();
   const app = appDetailsData[slug?.toLowerCase()];
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   if (!app) {
     return (
@@ -306,6 +310,48 @@ export default function AppDetail() {
             </div>
           </div>
 
+          {/* Mobile Screens Showcase (Full Width Gallery) */}
+          {app.screenshots && app.screenshots.length > 0 && (
+            <div className="mb-16">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-2xl font-heading font-bold text-text-primary flex items-center gap-2">
+                    <span>In-App Mobile Screens</span>
+                    <span className="text-xs font-normal font-body px-2.5 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent">
+                      Mobile View
+                    </span>
+                  </h2>
+                  <p className="text-text-secondary text-sm mt-1">
+                    Scroll horizontally to preview app screens — click any screen to enlarge.
+                  </p>
+                </div>
+              </div>
+
+              {/* Horizontal scroll container */}
+              <div className="flex gap-5 overflow-x-auto pb-6 pt-2 scrollbar-thin snap-x snap-mandatory">
+                {app.screenshots.map((shot, idx) => (
+                  <motion.button
+                    key={idx}
+                    type="button"
+                    onClick={() => {
+                      setLightboxIndex(idx);
+                      setLightboxOpen(true);
+                    }}
+                    className="w-52 md:w-60 flex-shrink-0 snap-start rounded-2xl overflow-hidden border border-border/50 hover:border-accent/60 bg-bg-elevated aspect-[9/20] shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-1 relative group cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+                  >
+                    <div className="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none z-10" />
+                    <img
+                      src={shot}
+                      alt={`${app.title} mobile screen ${idx + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                      loading="lazy"
+                    />
+                  </motion.button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Detailed Content */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Left Col: Description & Features */}
@@ -355,33 +401,10 @@ export default function AppDetail() {
               </motion.div>
             </div>
 
-            {/* Right Col: App Screenshots & Metadata sidebar */}
+            {/* Right Col: Metadata sidebar */}
             <div className="lg:col-span-1 space-y-8">
-              {/* Screenshots gallery */}
-              <div>
-                <h3 className="text-lg font-heading font-bold mb-4 text-text-primary">
-                  App Screenshots
-                </h3>
-                {/* Horizontal slider container */}
-                <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-thin snap-x snap-mandatory">
-                  {app.screenshots.map((shot, idx) => (
-                    <div
-                      key={idx}
-                      className="w-48 md:w-56 flex-shrink-0 snap-start rounded-2xl overflow-hidden border border-border/30 bg-bg-elevated"
-                    >
-                      <img
-                        src={shot}
-                        alt={`${app.title} screenshot ${idx + 1}`}
-                        className="w-full object-contain"
-                        loading="lazy"
-                      />
-                    </div>
-                  ))}
-                </div>
-              </div>
-
               {/* Developer & Legal info card */}
-              <div className="bg-bg-elevated border border-border p-6 rounded-2xl">
+              <div className="bg-bg-elevated border border-border p-6 rounded-2xl shadow-lg">
                 <h3 className="text-lg font-heading font-bold text-text-primary mb-4">
                   Information
                 </h3>
@@ -432,6 +455,26 @@ export default function AppDetail() {
           </div>
         </div>
       </div>
+
+      {/* Lightbox for zooming screenshots */}
+      {app.screenshots && (
+        <Lightbox
+          images={app.screenshots}
+          currentIndex={lightboxIndex}
+          isOpen={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+          onNext={() =>
+            setLightboxIndex((prev) =>
+              prev < app.screenshots.length - 1 ? prev + 1 : 0
+            )
+          }
+          onPrev={() =>
+            setLightboxIndex((prev) =>
+              prev > 0 ? prev - 1 : app.screenshots.length - 1
+            )
+          }
+        />
+      )}
     </>
   );
 }

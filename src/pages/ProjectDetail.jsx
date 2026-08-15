@@ -190,7 +190,9 @@ export default function ProjectDetail() {
           (filename.startsWith('threadly-') && !filename.includes('admin') && !filename.includes('cover')) ||
           (filename.startsWith('eazywalls-') && !filename.includes('admin') && !filename.includes('cover') && !filename.includes('icon')) ||
           src.includes('/videoplayer/') ||
-          src.includes('/attend/')
+          src.includes('/attend/') ||
+          filename.toLowerCase().startsWith('screenshot_') ||
+          src.toLowerCase().includes('attend')
         );
         if (isPort) {
           portrait.push(src);
@@ -500,14 +502,15 @@ export default function ProjectDetail() {
                           key={src}
                           variants={fadeUp}
                           type="button"
-                          className="rounded-2xl overflow-hidden cursor-pointer aspect-[9/16] bg-bg-subtle hover:opacity-85 transition-opacity focus:outline-none focus:ring-2 focus:ring-accent border border-border/40 hover:border-accent/40 shadow-md group relative"
+                          className="rounded-2xl overflow-hidden cursor-pointer aspect-[9/20] bg-bg-subtle hover:opacity-90 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-accent border border-border/50 hover:border-accent/60 shadow-lg hover:shadow-accent/10 group relative hover:-translate-y-1"
                           onClick={() => openLightbox(idx)}
                         >
-                          <div className="absolute inset-0 border border-black/10 rounded-2xl pointer-events-none z-10" />
+                          <div className="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none z-10" />
                           <img
                             src={src}
                             alt={`${title} mobile view`}
-                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                            className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                            loading="lazy"
                             onError={(e) => {
                               e.target.style.display = 'none';
                               e.target.parentElement.classList.add('flex', 'items-center', 'justify-center');
