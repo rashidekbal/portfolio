@@ -4,46 +4,7 @@ import { Shield, FileText, HelpCircle, ExternalLink, Download } from 'lucide-rea
 import SEOHead from '../components/SEOHead';
 
 const publishedApps = [
-  {
-    slug: 'threadly',
-    title: 'Threadly',
-    icon: '/images/threadly-icon.png',
-    tagline: 'A production-grade social media platform with real-time messaging, stories, reels, and a full social graph.',
-    description: 'Threadly is a feature-complete Android social media app built to solve real-world engineering challenges: session security, instant message delivery, offline local caching, and custom camera media pipelines.',
-    features: [
-      'Real-time messaging via WebSockets with delivery receipts',
-      'ExoPlayer cache integration for smooth Reels and video post playback',
-      'CameraX custom camera implementation for stories and posts',
-      'Room database local cache for offline feed support',
-      'Firebase Cloud Messaging (FCM) for instant offline notifications'
-    ],
-    googlePlayUrl: 'https://play.google.com/store',
-    privacyUrl: '/apps/threadly/privacy',
-    termsUrl: '/apps/threadly/terms',
-    supportUrl: '/apps/threadly/support',
-    projectUrl: '/projects/threadly',
-    tech: ['Java', 'Android SDK', 'MVVM', 'Room', 'Socket.IO', 'ExoPlayer']
-  },
-  {
-    slug: 'eazywalls',
-    title: 'EazyWalls',
-    icon: '/images/eazywalls-icon.png',
-    tagline: 'A curated wallpaper discovery platform with high-resolution collection feeds and category exploration.',
-    description: 'EazyWalls brings premium, hand-picked digital art to your device screen. It utilizes a native Android client connected to a high-performance Express 5 API backend with Cloudinary CDN storage and delivery.',
-    features: [
-      'Vibrant category exploration grids (Abstract, Anime, Pattern, Minimal)',
-      'Glide image caching with custom shimmer performance placeholders',
-      'Cloudinary CDN media storage with original/preview delivery separation',
-      'OTP-gated registration to guarantee authentic user verification',
-      'One-click wallpaper downloader and set-on-device action'
-    ],
-    googlePlayUrl: 'https://play.google.com/store',
-    privacyUrl: '/apps/eazywalls/privacy',
-    termsUrl: '/apps/eazywalls/terms',
-    supportUrl: '/apps/eazywalls/support',
-    projectUrl: '/projects/eazywalls',
-    tech: ['Java', 'Android SDK', 'MVVM', 'Room', 'Glide', 'Cloudinary']
-  },
+  
   {
     slug: '4k-media-player',
     title: '4K Media Player',
@@ -64,26 +25,26 @@ const publishedApps = [
     projectUrl: '/projects/4k-media-player',
     tech: ['Java', 'Android SDK', 'Jetpack Media3', 'Room', 'MVVM', 'Material Design']
   },
-  {
-    slug: 'attend',
-    title: 'Attend',
-    icon: '/images/attend-icon.png',
-    tagline: 'An intelligent, period-weighted college attendance tracker and academic hub with safe-to-bunk analytics.',
-    description: 'Attend is a native Android academic management app built for college students. It features period-weighted multi-lab attendance math, real-time safe-to-bunk predictions, mid-sem score tracking, and offline Room DB persistence.',
-    features: [
-      'Period-weighted attendance engine accounting for multi-hour labs and daily timetable variations',
-      'Real-time Safe-to-Bunk and recovery calculation algorithms',
-      'Assignment tracker with dynamic due dates and submission toggling',
-      'Mid-Sem examination mark tracking and performance trends across 3 assessment cycles',
-      'Android launcher App Widget for live percentage updates and bunk safety warnings'
-    ],
-    googlePlayUrl: 'https://play.google.com/store',
-    privacyUrl: '/apps/attend/privacy',
-    termsUrl: '/apps/attend/terms',
-    supportUrl: '/apps/attend/support',
-    projectUrl: '/projects/attend',
-    tech: ['Java 17', 'Android SDK', 'MVVM', 'Room', 'App Widgets', 'Material Design']
-  }
+  // {
+  //   slug: 'attend',
+  //   title: 'Attend',
+  //   icon: '/images/attend-icon.png',
+  //   tagline: 'An intelligent, period-weighted college attendance tracker and academic hub with safe-to-bunk analytics.',
+  //   description: 'Attend is a native Android academic management app built for college students. It features period-weighted multi-lab attendance math, real-time safe-to-bunk predictions, mid-sem score tracking, and offline Room DB persistence.',
+  //   features: [
+  //     'Period-weighted attendance engine accounting for multi-hour labs and daily timetable variations',
+  //     'Real-time Safe-to-Bunk and recovery calculation algorithms',
+  //     'Assignment tracker with dynamic due dates and submission toggling',
+  //     'Mid-Sem examination mark tracking and performance trends across 3 assessment cycles',
+  //     'Android launcher App Widget for live percentage updates and bunk safety warnings'
+  //   ],
+  //   googlePlayUrl: 'https://play.google.com/store',
+  //   privacyUrl: '/apps/attend/privacy',
+  //   termsUrl: '/apps/attend/terms',
+  //   supportUrl: '/apps/attend/support',
+  //   projectUrl: '/projects/attend',
+  //   tech: ['Java 17', 'Android SDK', 'MVVM', 'Room', 'App Widgets', 'Material Design']
+  // }
 ];
 
 const containerVariants = {
