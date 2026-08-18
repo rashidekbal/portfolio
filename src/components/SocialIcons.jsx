@@ -28,7 +28,6 @@ const iconMap = {
   github: GithubIcon,
   linkedin: LinkedinIcon,
   instagram: InstagramIcon,
-  youtube: YoutubeIcon,
 };
 
 const SocialIcons = ({ showLabels = false }) => {

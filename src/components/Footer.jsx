@@ -69,7 +69,7 @@ const Footer = () => {
           <p className="text-text-muted text-sm">
             &copy; 2026 Rasid Ekbal. All rights reserved.
           </p>
-          <SocialIcons showLabels={false} />
+      
         </div>
       </div>
     </footer>
