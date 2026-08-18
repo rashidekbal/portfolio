@@ -53,10 +53,10 @@ const sections = [
       <>
         For privacy inquiries, contact support at:{' '}
         <a
-          href="mailto:support@rasidekbal.com?subject=Threadly%20Privacy"
+          href="mailto:dev.rasid.ekbal@gmail.com?subject=Threadly%20Privacy"
           className="text-accent hover:text-accent-hover transition-colors link-underline"
         >
-          support@rasidekbal.com
+          dev.rasid.ekbal@gmail.com
         </a>
       </>
     )

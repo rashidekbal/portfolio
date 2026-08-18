@@ -282,7 +282,7 @@ export default function Support() {
                   )}
                   {submitStatus === 'error' && (
                     <p className="mt-4 text-red-400 text-sm bg-red-500/10 rounded-lg px-4 py-3 border border-red-500/20">
-                      Something went wrong. Please try again or email us directly at support@rasidekbal.com.
+                      Something went wrong. Please try again or email us directly at dev.rasid.ekbal@gmail.com.
                     </p>
                   )}
                 </div>

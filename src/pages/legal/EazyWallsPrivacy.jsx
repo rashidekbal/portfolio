@@ -52,10 +52,10 @@ const sections = [
       <>
         For privacy questions, reach support at:{' '}
         <a
-          href="mailto:support@rasidekbal.com?subject=EazyWalls%20Privacy"
+          href="mailto:dev.rasid.ekbal@gmail.com?subject=EazyWalls%20Privacy"
           className="text-accent hover:text-accent-hover transition-colors link-underline"
         >
-          support@rasidekbal.com
+          dev.rasid.ekbal@gmail.com
         </a>
       </>
     )

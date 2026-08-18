@@ -40,10 +40,10 @@ const sections = [
       <>
         If you have questions regarding this Privacy Policy, please reach out to:{' '}
         <a
-          href="mailto:support@rasidekbal.com?subject=Attend%20Privacy"
+          href="mailto:dev.rasid.ekbal@gmail.com?subject=Attend%20Privacy"
           className="text-accent hover:text-accent-hover transition-colors link-underline"
         >
-          support@rasidekbal.com
+          dev.rasid.ekbal@gmail.com
         </a>
       </>
     )

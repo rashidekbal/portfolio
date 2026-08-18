@@ -38,10 +38,10 @@ const sections = [
       <>
         For legal inquiries or questions regarding these terms, please email:{' '}
         <a
-          href="mailto:support@rasidekbal.com?subject=Attend%20Terms"
+          href="mailto:dev.rasid.ekbal@gmail.com?subject=Attend%20Terms"
           className="text-accent hover:text-accent-hover transition-colors link-underline"
         >
-          support@rasidekbal.com
+          dev.rasid.ekbal@gmail.com
         </a>
       </>
     )

@@ -41,10 +41,10 @@ const sections = [
       <>
         For privacy questions or general inquiries, reach support at:{' '}
         <a
-          href="mailto:support@rasidekbal.com?subject=4K%20Media%20Player%20Privacy"
+          href="mailto:dev.rasid.ekbal@gmail.com?subject=4K%20Media%20Player%20Privacy"
           className="text-accent hover:text-accent-hover transition-colors link-underline"
         >
-          support@rasidekbal.com
+          dev.rasid.ekbal@gmail.com
         </a>
       </>
     )

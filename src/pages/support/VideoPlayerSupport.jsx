@@ -271,7 +271,7 @@ export default function VideoPlayerSupport() {
                   )}
                   {submitStatus === 'error' && (
                       <div className="mt-4 text-red-400 text-sm bg-red-500/10 rounded-lg px-4 py-3 border border-red-500/20">
-                        Something went wrong. Please submit directly by emailing us at support@rasidekbal.com.
+                        Something went wrong. Please submit directly by emailing us at dev.rasid.ekbal@gmail.com.
                       </div>
                   )}
                 </div>

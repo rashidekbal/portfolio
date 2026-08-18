@@ -37,10 +37,10 @@ const sections = [
       <>
         For legal or technical inquiries, contact us at:{' '}
         <a
-          href="mailto:support@rasidekbal.com?subject=4K%20Media%20Player%20Terms"
+          href="mailto:dev.rasid.ekbal@gmail.com?subject=4K%20Media%20Player%20Terms"
           className="text-accent hover:text-accent-hover transition-colors link-underline"
         >
-          support@rasidekbal.com
+          dev.rasid.ekbal@gmail.com
         </a>
       </>
     )
