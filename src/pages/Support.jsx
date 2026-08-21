@@ -13,6 +13,7 @@ const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // TODO: Replace
 
 const appOptions = [
   { value: '', label: 'Select App' },
+  { value: 'pdf-tools', label: 'PDF Tools (PDF Utility)' },
   { value: 'threadly', label: 'Threadly (Social Media)' },
   { value: 'eazywalls', label: 'EazyWalls (Wallpaper Discover)' },
   { value: '4k-media-player', label: '4K Media Player (Media Player)' },
@@ -316,6 +317,13 @@ export default function Support() {
                     Please read our privacy policies and terms of service for full details on how we store and handle your personal details.
                   </p>
                   <div className="space-y-2">
+                    <div className="flex justify-between items-center text-xs">
+                      <span className="font-medium">PDF Tools:</span>
+                      <div className="space-x-2">
+                        <a href="/apps/pdf-tools/privacy" className="text-accent hover:underline">Privacy</a>
+                        <a href="/apps/pdf-tools/terms" className="text-accent hover:underline">Terms</a>
+                      </div>
+                    </div>
                     <div className="flex justify-between items-center text-xs">
                       <span className="font-medium">Threadly:</span>
                       <div className="space-x-2">

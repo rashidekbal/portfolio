@@ -31,6 +31,9 @@ import VideoPlayerSupport from './pages/support/VideoPlayerSupport';
 import AttendPrivacy from './pages/legal/AttendPrivacy';
 import AttendTerms from './pages/legal/AttendTerms';
 import AttendSupport from './pages/support/AttendSupport';
+import PdfToolPrivacy from './pages/legal/PdfToolPrivacy';
+import PdfToolTerms from './pages/legal/PdfToolTerms';
+import PdfToolSupport from './pages/support/PdfToolSupport';
 
 
 function ScrollToTop() {
@@ -79,6 +82,9 @@ function AnimatedRoutes() {
           <Route path="/apps/attend/privacy" element={<AttendPrivacy />} />
           <Route path="/apps/attend/terms" element={<AttendTerms />} />
           <Route path="/apps/attend/support" element={<AttendSupport />} />
+          <Route path="/apps/pdf-tools/privacy" element={<PdfToolPrivacy />} />
+          <Route path="/apps/pdf-tools/terms" element={<PdfToolTerms />} />
+          <Route path="/apps/pdf-tools/support" element={<PdfToolSupport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>

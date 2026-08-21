@@ -4,7 +4,26 @@ import { Shield, FileText, HelpCircle, ExternalLink, Download } from 'lucide-rea
 import SEOHead from '../components/SEOHead';
 
 const publishedApps = [
-  
+  {
+    slug: 'pdf-tools',
+    title: 'PDF Tools',
+    icon: '/images/pdftool-icon.png',
+    tagline: 'A privacy-first, 100% on-device Android PDF utility to merge, split, compress, unlock, lock, and organize PDF files.',
+    description: 'PDF Tools is a native Android application engineered to perform document manipulations locally on-device without uploading sensitive files to cloud servers. Features PDFBox processing, Google Play subscriptions (₹49/mo & ₹699 lifetime), and AdMob rewarded ads.',
+    features: [
+      '100% on-device local file processing via Apache PDFBox — zero server uploads',
+      'Dual-tier Google Play Billing (₹49/month recurring sub & ₹699 lifetime purchase)',
+      'AdMob Rewarded Video ad pipeline to earn Moon Credits for ad-supported saves',
+      'Compress, Merge, Split, Password Lock/Unlock, and Drag-and-Drop Page Reordering',
+      'Clean MVVM architecture in Java 17 with ViewBinding and Room SQLite'
+    ],
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/pdf-tools/privacy',
+    termsUrl: '/apps/pdf-tools/terms',
+    supportUrl: '/apps/pdf-tools/support',
+    projectUrl: '/projects/pdf-tools',
+    tech: ['Java 17', 'Android SDK', 'MVVM', 'PDFBox', 'Room', 'Google Play Billing', 'AdMob']
+  },
   {
     slug: '4k-media-player',
     title: '4K Media Player',
@@ -25,26 +44,26 @@ const publishedApps = [
     projectUrl: '/projects/4k-media-player',
     tech: ['Java', 'Android SDK', 'Jetpack Media3', 'Room', 'MVVM', 'Material Design']
   },
-  // {
-  //   slug: 'attend',
-  //   title: 'Attend',
-  //   icon: '/images/attend-icon.png',
-  //   tagline: 'An intelligent, period-weighted college attendance tracker and academic hub with safe-to-bunk analytics.',
-  //   description: 'Attend is a native Android academic management app built for college students. It features period-weighted multi-lab attendance math, real-time safe-to-bunk predictions, mid-sem score tracking, and offline Room DB persistence.',
-  //   features: [
-  //     'Period-weighted attendance engine accounting for multi-hour labs and daily timetable variations',
-  //     'Real-time Safe-to-Bunk and recovery calculation algorithms',
-  //     'Assignment tracker with dynamic due dates and submission toggling',
-  //     'Mid-Sem examination mark tracking and performance trends across 3 assessment cycles',
-  //     'Android launcher App Widget for live percentage updates and bunk safety warnings'
-  //   ],
-  //   googlePlayUrl: 'https://play.google.com/store',
-  //   privacyUrl: '/apps/attend/privacy',
-  //   termsUrl: '/apps/attend/terms',
-  //   supportUrl: '/apps/attend/support',
-  //   projectUrl: '/projects/attend',
-  //   tech: ['Java 17', 'Android SDK', 'MVVM', 'Room', 'App Widgets', 'Material Design']
-  // }
+  {
+    slug: 'attend',
+    title: 'Attend',
+    icon: '/images/attend-icon.png',
+    tagline: 'An intelligent, period-weighted college attendance tracker and academic hub with safe-to-bunk analytics.',
+    description: 'Attend is a native Android academic management app built for college students. It features period-weighted multi-lab attendance math, real-time safe-to-bunk predictions, mid-sem score tracking, and offline Room DB persistence.',
+    features: [
+      'Period-weighted attendance engine accounting for multi-hour labs and daily timetable variations',
+      'Real-time Safe-to-Bunk and recovery calculation algorithms',
+      'Assignment tracker with dynamic due dates and submission toggling',
+      'Mid-Sem examination mark tracking and performance trends across 3 assessment cycles',
+      'Android launcher App Widget for live percentage updates and bunk safety warnings'
+    ],
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/attend/privacy',
+    termsUrl: '/apps/attend/terms',
+    supportUrl: '/apps/attend/support',
+    projectUrl: '/projects/attend',
+    tech: ['Java 17', 'Android SDK', 'MVVM', 'Room', 'App Widgets', 'Material Design']
+  }
 ];
 
 const containerVariants = {

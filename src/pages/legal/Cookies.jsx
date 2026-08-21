@@ -44,10 +44,10 @@ const sections = [
       <>
         Questions? Email:{' '}
         <a
-          href="mailto:hello@rasidekbal.com"
+          href="mailto:dev.rasid.ekbal@gmail.com"
           className="text-accent hover:text-accent-hover transition-colors link-underline"
         >
-          hello@rasidekbal.com
+          dev.rasid.ekbal@gmail.com
         </a>
       </>
     ),

@@ -521,5 +521,64 @@ The application features a custom-built attendance engine (AttendanceScheduleUti
       "Dynamic accent color theming engine with full dark and light mode support",
       "Offline-first Room SQLite architecture with DbHelper facade and background executor threading"
     ]
+  },
+  {
+    slug: "pdf-tools",
+    title: "PDF Tools",
+    tagline: "A privacy-first, 100% on-device Android PDF utility to merge, split, compress, unlock, lock, and organize PDF files",
+    description: `PDF Tools is a native Android application engineered to perform essential document manipulations locally on-device without uploading sensitive user files to remote cloud servers.
+
+The application brings desktop-grade PDF capabilities—such as document merging, page extraction, lossy/lossless stream compression, password encryption/decryption, and drag-and-drop page reordering—directly to mobile devices while ensuring complete privacy and data security.
+
+## Architecture & Engineering
+
+The application is built using a modern MVVM (Model-View-ViewModel) pattern implemented in Java 17. UI interactions are bound using compile-time ViewBinding, while background processing and file I/O operations are managed asynchronously through an ExecutorService threading architecture with main-thread UI Handlers.
+
+Local PDF operations are executed using Apache PDFBox Android library. The local data persistence layer is powered by Room SQLite and SharedPreferences facades (DbHelper) to manage active user credits, preference states, and monetization metadata.
+
+## Monetization & Google Play Services
+
+PDF Tools features a dual-tier monetization model designed for flexibility:
+
+- **Google Play Billing Library**: Dual subscription and one-time purchase integration offering a ₹49/month recurring subscription and a ₹699 lifetime unlimited access license.
+- **Google AdMob Integration**: Interstitial and Rewarded Video ad pipelines enabling ad-supported users to earn "Moon Credits" for instant file saving.
+- **Ad-Free Credit Engine**: Built-in credit ledger backed by local persistence allowing users to save documents ad-free.
+
+## Key Features
+
+- **100% On-Device Security**: All document processing occurs locally. Files never leave the user's phone.
+- **Compress PDF**: Multi-level compression algorithms (Low, Medium, High) reducing file size by up to 80% with live quality estimation.
+- **Merge & Split PDF**: Combine multiple documents into one or extract custom page ranges and individual pages into ZIP archives.
+- **Lock & Unlock PDF**: Apply 128-bit AES encryption with User/Owner passwords or remove encryption from protected files.
+- **Organize & Reorder**: Drag-and-drop page reordering, page rotation, and blank page insertion.
+- **Built-in PDF Viewer**: Integrated low-latency PDF viewer for immediate document inspection.`,
+    tags: [
+      "Java 17",
+      "Android SDK",
+      "MVVM",
+      "PDFBox",
+      "Room",
+      "Google Play Billing",
+      "AdMob",
+      "Material Design"
+    ],
+    coverImage: "/images/pdftool-cover.png",
+    screenshots: [],
+    videoUrl: null,
+    links: {
+      github: "https://github.com/rashidekbal/Pdf-tool",
+      live: ""
+    },
+    featured: true,
+    year: "2026",
+    role: "Solo Developer",
+    highlights: [
+      "100% local, on-device processing via Apache PDFBox — zero server uploads or data transmission",
+      "Dual-tier Google Play Billing integration supporting ₹49/month recurring and ₹699 lifetime licenses",
+      "AdMob rewarded video ad pipeline allowing users to earn Moon Credits for ad-supported saves",
+      "Clean MVVM architecture in Java 17 with ViewBinding, Room SQLite, and custom DbHelper facade",
+      "Full PDF utility suite: Merge, Split, Compress, Lock (Encrypt), Unlock (Decrypt), and Organize",
+      "Material 3 design system with tools:text layout previews and dark/light theme support"
+    ]
   }
 ];

@@ -198,6 +198,49 @@ const appDetailsData = {
       '/images/attend/Screenshot_20260815_221044.jpg',
       '/images/attend/Screenshot_20260815_221116.jpg'
     ]
+  },
+  'pdf-tools': {
+    title: 'PDF Tools',
+    icon: '/images/pdftool-icon.png',
+    tagline: 'A privacy-first, 100% on-device Android PDF utility to merge, split, compress, unlock, lock, and organize PDF files.',
+    category: 'Productivity / Tools',
+    lastUpdated: 'August 2026',
+    size: '16 MB',
+    requires: 'Android 8.0 and up',
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/pdf-tools/privacy',
+    termsUrl: '/apps/pdf-tools/terms',
+    supportUrl: '/apps/pdf-tools/support',
+    aboutText: `PDF Tools is a privacy-first, native Android application engineered to manipulate PDF files locally on your device without transmitting sensitive document data to external cloud servers.
+
+Whether you need to merge multiple documents into a single PDF, split pages into separate files, compress large files for email attachments, or protect sensitive documents with 128-bit AES encryption, PDF Tools delivers desktop-grade PDF manipulation with 100% on-device local processing.`,
+    features: [
+      {
+        title: '100% On-Device Processing',
+        desc: 'All PDF operations execute locally on your smartphone using Apache PDFBox — zero server uploads and zero privacy compromise.'
+      },
+      {
+        title: 'Compress & Optimize PDF',
+        desc: 'Reduce file size using multi-level lossy and lossless compression algorithms (Low, Medium, High) with live quality preview estimation.'
+      },
+      {
+        title: 'Merge & Split Documents',
+        desc: 'Combine multiple PDF files into a unified document or split specific page ranges into individual PDF files or ZIP archives.'
+      },
+      {
+        title: 'Password Lock & Unlock',
+        desc: 'Protect documents with 128-bit AES User and Owner passwords or decrypt password-protected PDFs for quick viewing.'
+      },
+      {
+        title: 'Organize & Reorder Pages',
+        desc: 'Intuitive drag-and-drop page reordering, page rotation, and blank page insertion prior to rendering.'
+      },
+      {
+        title: 'Dual Monetization Engine',
+        desc: 'Google Play Billing (₹49/mo sub & ₹699 lifetime) or AdMob rewarded video ads to earn Moon Credits for ad-supported saves.'
+      }
+    ],
+    screenshots: []
   }
 };
 
