@@ -536,13 +536,12 @@ The application is built using a modern MVVM (Model-View-ViewModel) pattern impl
 
 Local PDF operations are executed using Apache PDFBox Android library. The local data persistence layer is powered by Room SQLite and SharedPreferences facades (DbHelper) to manage active user credits, preference states, and monetization metadata.
 
-## Monetization & Google Play Services
+## Monetization & Google AdMob
 
-PDF Tools features a dual-tier monetization model designed for flexibility:
+PDF Tools features an ad-supported credit monetization system designed for flexibility:
 
-- **Google Play Billing Library**: Dual subscription and one-time purchase integration offering a ₹49/month recurring subscription and a ₹699 lifetime unlimited access license.
 - **Google AdMob Integration**: Interstitial and Rewarded Video ad pipelines enabling ad-supported users to earn "Moon Credits" for instant file saving.
-- **Ad-Free Credit Engine**: Built-in credit ledger backed by local persistence allowing users to save documents ad-free.
+- **Moon Credit Engine**: Built-in credit ledger backed by local persistence allowing users to save documents ad-free by consuming earned credits.
 
 ## Key Features
 
@@ -558,7 +557,6 @@ PDF Tools features a dual-tier monetization model designed for flexibility:
       "MVVM",
       "PDFBox",
       "Room",
-      "Google Play Billing",
       "AdMob",
       "Material Design"
     ],
@@ -583,7 +581,6 @@ PDF Tools features a dual-tier monetization model designed for flexibility:
     role: "Solo Developer",
     highlights: [
       "100% local, on-device processing via Apache PDFBox — zero server uploads or data transmission",
-      "Dual-tier Google Play Billing integration supporting ₹49/month recurring and ₹699 lifetime licenses",
       "AdMob rewarded video ad pipeline allowing users to earn Moon Credits for ad-supported saves",
       "Clean MVVM architecture in Java 17 with ViewBinding, Room SQLite, and custom DbHelper facade",
       "Full PDF utility suite: Merge, Split, Compress, Lock (Encrypt), Unlock (Decrypt), and Organize",
