@@ -14,6 +14,7 @@ const sections = [
     list: [
       'Document Data: Zero collection. All PDF processing happens locally in your device memory.',
       'Purchase Information: Handled securely through Google Play Billing. We do not store or process your credit card numbers or payment credentials directly.',
+      'App Analytics & Stability Logs: Anonymous performance, feature usage events, and crash diagnostics collected via Google Firebase Analytics & Crashlytics to improve app performance.',
       'Ad-Supported Diagnostics: Non-personal diagnostic logs managed by Google AdMob when watching rewarded ads to earn credits.',
       'Support Requests: If you email support, we only use your email address to reply to your inquiry.'
     ]
@@ -28,7 +29,8 @@ const sections = [
     content: null,
     list: [
       'Google Play Billing: Used for processing subscription (₹49/month) and lifetime (₹699) purchases.',
-      'Google AdMob: Used for serving rewarded video ads to earn free credits.'
+      'Google AdMob: Used for serving rewarded video ads to earn free credits.',
+      'Google Firebase Analytics & Crashlytics: Used for anonymous usage statistics, tool analytics, and crash reporting.'
     ]
   },
   {
