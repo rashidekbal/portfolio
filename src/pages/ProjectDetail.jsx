@@ -187,6 +187,10 @@ export default function ProjectDetail() {
         indices[src] = idx;
         const filename = src.split('/').pop() || '';
         const isPort = (
+          (src.includes('/pdftool/') && (
+            ['2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'].includes(filename) ||
+            (filename.startsWith('IMG-20260822-WA00') && !filename.includes('WA0028'))
+          )) ||
           (filename.startsWith('threadly-') && !filename.includes('admin') && !filename.includes('cover')) ||
           (filename.startsWith('eazywalls-') && !filename.includes('admin') && !filename.includes('cover') && !filename.includes('icon')) ||
           src.includes('/videoplayer/') ||
@@ -446,9 +450,9 @@ export default function ProjectDetail() {
                     variants={fadeUp}
                     className="text-2xl font-heading font-semibold mb-6 text-text-primary flex items-center gap-2"
                   >
-                    <span>Web & Admin Panel Screenshots</span>
-                    <span className="text-xs font-normal font-body px-2 py-0.5 rounded-full bg-bg-subtle border border-border text-text-secondary">
-                      Desktop View
+                    <span>Tablet & Desktop Showcase</span>
+                    <span className="text-xs font-normal font-body px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold">
+                      Tab View
                     </span>
                   </motion.h2>
                   <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">

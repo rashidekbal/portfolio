@@ -562,8 +562,17 @@ PDF Tools features a dual-tier monetization model designed for flexibility:
       "AdMob",
       "Material Design"
     ],
-    coverImage: "/images/pdftool-cover.png",
-    screenshots: [],
+    coverImage: "/images/pdftool/1.jpg",
+    screenshots: [
+      "/images/pdftool/2.jpg",
+      "/images/pdftool/3.jpg",
+      "/images/pdftool/4.jpg",
+      "/images/pdftool/5.jpg",
+      "/images/pdftool/6.jpg",
+      "/images/pdftool/7.jpg",
+      "/images/pdftool/8.jpg",
+    
+    ],
     videoUrl: null,
     links: {
       github: "https://github.com/rashidekbal/Pdf-tool",

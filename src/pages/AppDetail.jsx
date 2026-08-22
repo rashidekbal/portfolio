@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Shield, FileText, HelpCircle, Download, ChevronLeft, CheckCircle2, ArrowRight } from 'lucide-react';
@@ -240,7 +240,20 @@ Whether you need to merge multiple documents into a single PDF, split pages into
         desc: 'Google Play Billing (₹49/mo sub & ₹699 lifetime) or AdMob rewarded video ads to earn Moon Credits for ad-supported saves.'
       }
     ],
-    screenshots: []
+    screenshots: [
+      '/images/pdftool/1.jpg',
+      '/images/pdftool/2.jpg',
+      '/images/pdftool/3.jpg',
+      '/images/pdftool/4.jpg',
+      '/images/pdftool/5.jpg',
+      '/images/pdftool/6.jpg',
+      '/images/pdftool/7.jpg',
+      '/images/pdftool/8.jpg',
+      '/images/pdftool/9.jpg',
+      '/images/pdftool/10.jpg',
+      '/images/pdftool/11.jpg',
+      '/images/pdftool/12.jpg'
+    ]
   }
 };
 
@@ -259,6 +272,32 @@ export default function AppDetail() {
   const app = appDetailsData[slug?.toLowerCase()];
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+
+  const { mobileScreens, tabletScreens } = useMemo(() => {
+    if (!app?.screenshots) return { mobileScreens: [], tabletScreens: [] };
+    const mobile = [];
+    const tablet = [];
+    app.screenshots.forEach((src) => {
+      const filename = src.split('/').pop() || '';
+      const isMobile = (
+        (src.includes('/pdftool/') && (
+          ['2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg'].includes(filename) ||
+          (filename.startsWith('IMG-20260822-WA00') && !filename.includes('WA0028'))
+        )) ||
+        (filename.startsWith('threadly-') && !filename.includes('admin') && !filename.includes('cover')) ||
+        (filename.startsWith('eazywalls-') && !filename.includes('admin') && !filename.includes('cover')) ||
+        src.includes('/videoplayer/') ||
+        src.includes('/attend/') ||
+        filename.toLowerCase().startsWith('screenshot_')
+      );
+      if (isMobile) {
+        mobile.push(src);
+      } else {
+        tablet.push(src);
+      }
+    });
+    return { mobileScreens: mobile, tabletScreens: tablet };
+  }, [app?.screenshots]);
 
   if (!app) {
     return (
@@ -353,44 +392,92 @@ export default function AppDetail() {
             </div>
           </div>
 
-          {/* Mobile Screens Showcase (Full Width Gallery) */}
-          {app.screenshots && app.screenshots.length > 0 && (
-            <div className="mb-16">
+          {/* Mobile Screens Showcase (App View) */}
+          {mobileScreens.length > 0 && (
+            <div className="mb-12">
               <div className="flex items-center justify-between mb-6">
                 <div>
                   <h2 className="text-2xl font-heading font-bold text-text-primary flex items-center gap-2">
-                    <span>In-App Mobile Screens</span>
-                    <span className="text-xs font-normal font-body px-2.5 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent">
-                      Mobile View
+                    <span>Mobile Application Screens</span>
+                    <span className="text-xs font-normal font-body px-2.5 py-0.5 rounded-full bg-accent/10 border border-accent/20 text-accent font-semibold">
+                      App View
                     </span>
                   </h2>
                   <p className="text-text-secondary text-sm mt-1">
-                    Scroll horizontally to preview app screens — click any screen to enlarge.
+                    Scroll horizontally to preview mobile app screens — click any screen to enlarge.
                   </p>
                 </div>
               </div>
 
               {/* Horizontal scroll container */}
               <div className="flex gap-5 overflow-x-auto pb-6 pt-2 scrollbar-thin snap-x snap-mandatory">
-                {app.screenshots.map((shot, idx) => (
-                  <motion.button
-                    key={idx}
-                    type="button"
-                    onClick={() => {
-                      setLightboxIndex(idx);
-                      setLightboxOpen(true);
-                    }}
-                    className="w-52 md:w-60 flex-shrink-0 snap-start rounded-2xl overflow-hidden border border-border/50 hover:border-accent/60 bg-bg-elevated aspect-[9/20] shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-1 relative group cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
-                  >
-                    <div className="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none z-10" />
-                    <img
-                      src={shot}
-                      alt={`${app.title} mobile screen ${idx + 1}`}
-                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
-                      loading="lazy"
-                    />
-                  </motion.button>
-                ))}
+                {mobileScreens.map((shot) => {
+                  const globalIdx = app.screenshots.indexOf(shot);
+                  return (
+                    <motion.button
+                      key={shot}
+                      type="button"
+                      onClick={() => {
+                        setLightboxIndex(globalIdx >= 0 ? globalIdx : 0);
+                        setLightboxOpen(true);
+                      }}
+                      className="w-52 md:w-60 flex-shrink-0 snap-start rounded-2xl overflow-hidden border border-border/50 hover:border-accent/60 bg-bg-elevated aspect-[9/20] shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-1 relative group cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+                    >
+                      <div className="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none z-10" />
+                      <img
+                        src={shot}
+                        alt={`${app.title} mobile screen`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </motion.button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Tablet & Widescreen Showcase (Tab View) */}
+          {tabletScreens.length > 0 && (
+            <div className="mb-16">
+              <div className="flex items-center justify-between mb-6">
+                <div>
+                  <h2 className="text-2xl font-heading font-bold text-text-primary flex items-center gap-2">
+                    <span>Tablet & Widescreen Showcase</span>
+                    <span className="text-xs font-normal font-body px-2.5 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 font-semibold">
+                      Tab View
+                    </span>
+                  </h2>
+                  <p className="text-text-secondary text-sm mt-1">
+                    Large screen responsive layouts, tablet interface & feature overview.
+                  </p>
+                </div>
+              </div>
+
+              {/* Horizontal scroll container */}
+              <div className="flex gap-5 overflow-x-auto pb-6 pt-2 scrollbar-thin snap-x snap-mandatory">
+                {tabletScreens.map((shot) => {
+                  const globalIdx = app.screenshots.indexOf(shot);
+                  return (
+                    <motion.button
+                      key={shot}
+                      type="button"
+                      onClick={() => {
+                        setLightboxIndex(globalIdx >= 0 ? globalIdx : 0);
+                        setLightboxOpen(true);
+                      }}
+                      className="w-72 md:w-[420px] flex-shrink-0 snap-start rounded-2xl overflow-hidden border border-border/50 hover:border-accent/60 bg-bg-elevated aspect-[16/9] shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-1 relative group cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent"
+                    >
+                      <div className="absolute inset-0 border border-white/5 rounded-2xl pointer-events-none z-10" />
+                      <img
+                        src={shot}
+                        alt={`${app.title} tablet screen`}
+                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                        loading="lazy"
+                      />
+                    </motion.button>
+                  );
+                })}
               </div>
             </div>
           )}
