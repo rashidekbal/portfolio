@@ -34,6 +34,7 @@ import AttendSupport from './pages/support/AttendSupport';
 import PdfToolPrivacy from './pages/legal/PdfToolPrivacy';
 import PdfToolTerms from './pages/legal/PdfToolTerms';
 import PdfToolSupport from './pages/support/PdfToolSupport';
+import { Analytics } from '@vercel/analytics/react';
 
 
 function ScrollToTop() {
@@ -95,6 +96,7 @@ function AnimatedRoutes() {
 function App() {
   return (
     <HelmetProvider>
+      <Analytics/>
       <Router>
         <ScrollToTop />
         <div className="flex flex-col min-h-screen bg-bg-base text-text-primary relative overflow-x-hidden">
