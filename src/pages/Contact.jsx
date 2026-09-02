@@ -7,9 +7,9 @@ import SectionWrapper from '../components/SectionWrapper';
 import Button from '../components/Button';
 import SocialIcons from '../components/SocialIcons';
 
-const EMAILJS_SERVICE_ID = 'YOUR_SERVICE_ID'; // TODO: Replace
-const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID'; // TODO: Replace
-const EMAILJS_PUBLIC_KEY = 'YOUR_PUBLIC_KEY'; // TODO: Replace
+const EMAILJS_SERVICE_ID = 'service_jcakom3';
+const EMAILJS_TEMPLATE_ID = 'template_arq0jqo';
+const EMAILJS_PUBLIC_KEY = 'BG2At-wOZdOn2krC4';
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
