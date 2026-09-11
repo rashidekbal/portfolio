@@ -586,5 +586,61 @@ PDF Tools features an ad-supported credit monetization system designed for flexi
       "Full PDF utility suite: Merge, Split, Compress, Lock (Encrypt), Unlock (Decrypt), and Organize",
       "Material 3 design system with tools:text layout previews and dark/light theme support"
     ]
+  },
+  {
+    slug: "number-blocks",
+    title: "Number Blocks 2048",
+    tagline: "An architectural, tactile 2048 puzzle with endless merge progression beyond 2048, multi-grid dimensions, custom procedural audio, and Google AdMob rewarded undos",
+    description: `Number Blocks 2048 is a native Android game that re-architects the classic 2048 puzzle formula into a tactile, endless experience. Engineered from scratch in Java 17 targeting Android SDK 37, it breaks beyond the arbitrary 2048 boundary with algorithmic color generation, logarithmic typography scaling, zero-asset AudioTrack tone synthesis, and a clean responsive UI that scales across phone, foldable, and tablet form factors.
+
+## Architectural Highlights
+
+- **Pure Java 17 & SDK 37 Architecture**: Full compliance with modern Android 15 & SDK 37 runtime standards, including automatic system bar (status bar, display cutouts, gesture navigation) window insets handling.
+- **100% ViewBinding Presentation Layer**: Zero \`findViewById\` calls across all activities and dialogs, delivering compile-time type-safety.
+- **Endless Merge Progression**: Eliminates the traditional 2048 ceiling. Tiles merge indefinitely into 4096, 8192, 16384, 32768, 65536, and higher. Tile colors are computed algorithmically with luminance-based text contrast.
+- **Multi-Grid Dimensions**: Supports 4×4 Standard, 5×5 Extended, and 6×6 Expanded boards with discrete state persistence and independent high scores.
+- **Procedural Tone Synthesis**: Built without heavy sound assets. Employs a zero-dependency, real-time PCM 16-bit sine wave generator over Android \`AudioTrack\` coupled with calibrated \`Vibrator\` tactile haptics.
+- **Screen-Wide Gesture Navigation**: Screen-wide swipe recognition with touch-exclusion zones for top action buttons and bottom ad banners, backed by a 60ms dual-trigger debounce window.
+- **AdMob Rewarded Undo Pipeline**: Players receive 5 free undos per run, after which additional undos can be unlocked by voluntarily viewing Google AdMob rewarded video ads.
+
+## Architecture & Code Structure
+
+The project strictly follows clean separation of concerns:
+- \`engine\`: Pure domain logic containing the board matrix, slide/merge mathematics, and serializable \`GameSnapshot\` state persistence.
+- \`ui\`: Custom 2D Canvas \`BoardView\`, dialog managers, and status bar inset controllers.
+- \`theme\`: Multi-palette theming engine (Alabaster Minimal, Titanium Slate, Nordic Clay, and Obsidian Charcoal).
+- \`audio\`: Synthesized sound generator and calibrated haptics.
+- \`ads\`: Google AdMob banner and rewarded video lifecycle controller with externalized configuration IDs.`,
+    tags: [
+      "Java 17",
+      "Android SDK 37",
+      "ViewBinding",
+      "Custom Canvas 2D",
+      "Google AdMob",
+      "AudioTrack Synthesis",
+      "Material Design"
+    ],
+    coverImage: "/images/numberblocks-cover.jpg",
+    screenshots: [
+      "/images/numberblocks/1.jpeg",
+      "/images/numberblocks/2.jpeg",
+      "/images/numberblocks/3.jpeg",
+      "/images/numberblocks/4.jpeg"
+    ],
+    videoUrl: null,
+    links: {
+      github: "https://github.com/rashidekbal/numbersBlocks",
+      live: "https://play.google.com/store"
+    },
+    featured: true,
+    year: "2026",
+    role: "Solo Developer",
+    highlights: [
+      "Endless tile merges beyond 2048 with dynamic algorithmic tile palettes and logarithmic font scaling",
+      "Multi-grid boards (4×4, 5×5, 6×6) with automatic state persistence and active run resumption",
+      "Synthesized low-latency PCM audio generation via AudioTrack with zero audio asset overhead",
+      "Full Android 15 & SDK 37 compliance with automatic status/navigation bar insets and 100% ViewBinding",
+      "Rewarded AdMob undo economy offering 5 free undos per session with ad-supported continuation"
+    ]
   }
 ];

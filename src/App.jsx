@@ -34,6 +34,9 @@ import AttendSupport from './pages/support/AttendSupport';
 import PdfToolPrivacy from './pages/legal/PdfToolPrivacy';
 import PdfToolTerms from './pages/legal/PdfToolTerms';
 import PdfToolSupport from './pages/support/PdfToolSupport';
+import NumberBlocksPrivacy from './pages/legal/NumberBlocksPrivacy';
+import NumberBlocksTerms from './pages/legal/NumberBlocksTerms';
+import NumberBlocksSupport from './pages/support/NumberBlocksSupport';
 import { Analytics } from '@vercel/analytics/react';
 
 
@@ -86,6 +89,9 @@ function AnimatedRoutes() {
           <Route path="/apps/pdf-tools/privacy" element={<PdfToolPrivacy />} />
           <Route path="/apps/pdf-tools/terms" element={<PdfToolTerms />} />
           <Route path="/apps/pdf-tools/support" element={<PdfToolSupport />} />
+          <Route path="/apps/number-blocks/privacy" element={<NumberBlocksPrivacy />} />
+          <Route path="/apps/number-blocks/terms" element={<NumberBlocksTerms />} />
+          <Route path="/apps/number-blocks/support" element={<NumberBlocksSupport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>

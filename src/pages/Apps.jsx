@@ -5,6 +5,27 @@ import SEOHead from '../components/SEOHead';
 
 const publishedApps = [
   {
+    slug: 'number-blocks',
+    title: 'Number Blocks 2048',
+    icon: '/images/numberblocks-icon.png',
+    tagline: 'An architectural, tactile 2048 puzzle with endless merge progression, multi-board dimensions (4x4, 5x5, 6x6), procedural audio, and rewarded undos.',
+    description: 'Number Blocks 2048 is a native Android architectural puzzle game engineered for endless progression beyond the 2048 boundary. Built in modern Java 17 targeting Android SDK 37, it features custom low-latency 2D Canvas rendering, synthesized audio generation, AdMob banner and rewarded video ads, multi-screen responsive dimension tables, and edge-to-edge window insets.',
+    features: [
+      'Endless tile progression beyond 2048 (4096, 8192, 16384, 32768, 65536, etc.) with logarithmic typography scaling',
+      'Multi-grid dimensions: 4×4 Standard, 5×5 Extended, and 6×6 Expanded with independent game state save & resume',
+      '5 free undos per run with Google AdMob Rewarded Video integration for continuous play',
+      'Zero-asset procedural sound engine using low-level AudioTrack sine-wave synthesis and calibrated haptics',
+      'Screen-wide gesture navigation with touch-guarded action button exclusion areas',
+      '100% ViewBinding and full Android 15 / SDK 37 edge-to-edge window insets compliance'
+    ],
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/number-blocks/privacy',
+    termsUrl: '/apps/number-blocks/terms',
+    supportUrl: '/apps/number-blocks/support',
+    projectUrl: '/projects/number-blocks',
+    tech: ['Java 17', 'Android SDK 37', 'ViewBinding', 'Custom Canvas', 'AdMob', 'AudioTrack', 'Material Design']
+  },
+  {
     slug: 'pdf-tools',
     title: 'PDF Tools',
     icon: '/images/pdftool-icon.png',

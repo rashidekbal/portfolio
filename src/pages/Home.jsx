@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Shield, HelpCircle, ExternalLink, Smartphone } from 'lucide-react';
 import SEOHead from '../components/SEOHead';
 import SectionWrapper from '../components/SectionWrapper';
 import Button from '../components/Button';
@@ -199,6 +199,186 @@ export default function Home() {
             className="text-accent hover:text-accent-hover transition-colors font-medium"
           >
             View all projects →
+          </Link>
+        </div>
+      </SectionWrapper>
+
+      {/* ─── SECTION 3.5 · Published Android Apps ─────────── */}
+      <SectionWrapper className="section-padding bg-bg-surface/50 border-y border-border/40">
+        <div className="flex items-center justify-center gap-2 mb-3">
+          <Smartphone size={20} className="text-accent" />
+          <span className="text-xs font-semibold uppercase tracking-widest text-accent">
+            Google Play & Android Ecosystem
+          </span>
+        </div>
+        <h2 className="text-3xl md:text-4xl font-heading font-bold text-center mb-4">
+          Published Apps & Games
+        </h2>
+        <p className="text-text-secondary text-center mb-12 max-w-xl mx-auto">
+          Production mobile applications deployed to users with dedicated privacy policies, terms of service, and direct support centers.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-container mx-auto">
+          {/* App 1: Number Blocks 2048 */}
+          <div className="bg-bg-elevated rounded-2xl border border-border/60 p-6 flex flex-col justify-between hover:border-accent/40 transition-all shadow-sm">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src="/images/numberblocks-icon.png"
+                  alt="Number Blocks 2048"
+                  className="w-14 h-14 rounded-2xl object-cover border border-border shadow-md"
+                />
+                <div>
+                  <h3 className="font-heading font-bold text-lg text-text-primary">
+                    Number Blocks 2048
+                  </h3>
+                  <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent mt-0.5">
+                    Tactile Game · SDK 37
+                  </span>
+                </div>
+              </div>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Endless merge puzzle beyond 2048 with multi-grid boards (4x4, 5x5, 6x6), procedural audio synthesis, and rewarded undos.
+              </p>
+            </div>
+            <div>
+              <div className="flex items-center justify-between border-t border-border/50 pt-4 gap-2 text-xs">
+                <Link
+                  to="/apps/number-blocks/privacy"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors"
+                >
+                  <Shield size={14} />
+                  Privacy Policy
+                </Link>
+                <Link
+                  to="/apps/number-blocks/support"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors"
+                >
+                  <HelpCircle size={14} />
+                  Support
+                </Link>
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-hover transition-colors"
+                >
+                  Google Play
+                  <ExternalLink size={13} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* App 2: PDF Tools */}
+          <div className="bg-bg-elevated rounded-2xl border border-border/60 p-6 flex flex-col justify-between hover:border-accent/40 transition-all shadow-sm">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src="/images/pdftool-icon.png"
+                  alt="PDF Tools"
+                  className="w-14 h-14 rounded-2xl object-cover border border-border shadow-md"
+                />
+                <div>
+                  <h3 className="font-heading font-bold text-lg text-text-primary">
+                    PDF Tools
+                  </h3>
+                  <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent mt-0.5">
+                    100% On-Device Utility
+                  </span>
+                </div>
+              </div>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Privacy-first PDF utility to merge, split, compress, encrypt, and organize documents on-device without cloud server uploads.
+              </p>
+            </div>
+            <div>
+              <div className="flex items-center justify-between border-t border-border/50 pt-4 gap-2 text-xs">
+                <Link
+                  to="/apps/pdf-tools/privacy"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors"
+                >
+                  <Shield size={14} />
+                  Privacy Policy
+                </Link>
+                <Link
+                  to="/apps/pdf-tools/support"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors"
+                >
+                  <HelpCircle size={14} />
+                  Support
+                </Link>
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-hover transition-colors"
+                >
+                  Google Play
+                  <ExternalLink size={13} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* App 3: 4K Media Player */}
+          <div className="bg-bg-elevated rounded-2xl border border-border/60 p-6 flex flex-col justify-between hover:border-accent/40 transition-all shadow-sm">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src="/images/videoplayer-icon.png"
+                  alt="4K Media Player"
+                  className="w-14 h-14 rounded-2xl object-cover border border-border shadow-md"
+                />
+                <div>
+                  <h3 className="font-heading font-bold text-lg text-text-primary">
+                    4K Media Player
+                  </h3>
+                  <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent mt-0.5">
+                    ExoPlayer Media Suite
+                  </span>
+                </div>
+              </div>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Native Android media utility with Room DB caching, custom controllers, and persistent background playback services.
+              </p>
+            </div>
+            <div>
+              <div className="flex items-center justify-between border-t border-border/50 pt-4 gap-2 text-xs">
+                <Link
+                  to="/apps/4k-media-player/privacy"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors"
+                >
+                  <Shield size={14} />
+                  Privacy Policy
+                </Link>
+                <Link
+                  to="/apps/4k-media-player/support"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors"
+                >
+                  <HelpCircle size={14} />
+                  Support
+                </Link>
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-hover transition-colors"
+                >
+                  Google Play
+                  <ExternalLink size={13} />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex justify-center mt-10">
+          <Link
+            to="/apps"
+            className="text-accent hover:text-accent-hover transition-colors font-medium text-sm inline-flex items-center gap-1.5"
+          >
+            Explore all published apps & legal centers →
           </Link>
         </div>
       </SectionWrapper>
