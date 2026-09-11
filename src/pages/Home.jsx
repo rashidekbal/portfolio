@@ -237,9 +237,28 @@ export default function Home() {
                   </span>
                 </div>
               </div>
-              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+              <p className="text-text-secondary text-sm leading-relaxed mb-4">
                 Endless merge puzzle beyond 2048 with multi-grid boards (4x4, 5x5, 6x6), procedural audio synthesis, and rewarded undos.
               </p>
+
+              {/* Screenshots Preview */}
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                <img
+                  src="/images/numberblocks/1.jpeg"
+                  alt="Number Blocks Menu Screen"
+                  className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
+                />
+                <img
+                  src="/images/numberblocks/2.jpeg"
+                  alt="Number Blocks Gameplay"
+                  className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
+                />
+                <img
+                  src="/images/numberblocks/3.jpeg"
+                  alt="Number Blocks Tutorial"
+                  className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
+                />
+              </div>
             </div>
             <div>
               <div className="flex items-center justify-between border-t border-border/50 pt-4 gap-2 text-xs">

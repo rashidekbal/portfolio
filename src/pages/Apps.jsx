@@ -23,7 +23,13 @@ const publishedApps = [
     termsUrl: '/apps/number-blocks/terms',
     supportUrl: '/apps/number-blocks/support',
     projectUrl: '/projects/number-blocks',
-    tech: ['Java 17', 'Android SDK 37', 'ViewBinding', 'Custom Canvas', 'AdMob', 'AudioTrack', 'Material Design']
+    tech: ['Java 17', 'Android SDK 37', 'ViewBinding', 'Custom Canvas', 'AdMob', 'AudioTrack', 'Material Design'],
+    screenshots: [
+      '/images/numberblocks/1.jpeg',
+      '/images/numberblocks/2.jpeg',
+      '/images/numberblocks/3.jpeg',
+      '/images/numberblocks/4.jpeg'
+    ]
   },
   {
     slug: 'pdf-tools',

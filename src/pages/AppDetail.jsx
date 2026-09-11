@@ -254,6 +254,52 @@ Whether you need to merge multiple documents into a single PDF, split pages into
       '/images/pdftool/11.jpg',
       '/images/pdftool/12.jpg'
     ]
+  },
+  'number-blocks': {
+    title: 'Number Blocks 2048',
+    icon: '/images/numberblocks-icon.png',
+    tagline: 'An architectural, tactile 2048 puzzle with endless merge progression, multi-board dimensions (4x4, 5x5, 6x6), procedural audio, and rewarded undos.',
+    category: 'Puzzle & Board Games',
+    lastUpdated: 'September 2026',
+    size: '9 MB',
+    requires: 'Android 7.0 and up (SDK 37)',
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/number-blocks/privacy',
+    termsUrl: '/apps/number-blocks/terms',
+    supportUrl: '/apps/number-blocks/support',
+    aboutText: `Number Blocks 2048 is an architectural, tactile reimagining of the classic 2048 math puzzle. Built in native Java 17 targeting Android SDK 37, it breaks beyond the traditional 2048 ceiling into 4096, 8192, 16384, 32768, 65536, and higher. Featuring algorithmic color palettes, logarithmic typography scaling, zero-asset PCM sine wave tone synthesis, calibrated haptic feedback, 4x4, 5x5, and 6x6 grid selection, and rewarded ad undos, it provides an endlessly satisfying puzzle experience on any device.`,
+    features: [
+      {
+        title: 'Endless Gameplay Beyond 2048',
+        desc: 'Merge tiles indefinitely into 4096, 8192, 16384, and beyond with automatic typography scaling and dynamic high-contrast theme palettes.'
+      },
+      {
+        title: 'Multi-Board Dimensions',
+        desc: 'Choose between 4×4 Standard, 5×5 Extended, and 6×6 Expanded grids with independent game state persistence and high-score records.'
+      },
+      {
+        title: 'Tactile Sound Synthesis & Haptics',
+        desc: 'Zero-asset real-time AudioTrack sine-wave generation paired with calibrated Android Vibrator haptics for satisfying physical feedback.'
+      },
+      {
+        title: '5 Free Undos & Rewarded Video',
+        desc: 'Start each session with 5 complimentary undos. When exhausted, optionally view rewarded ads to keep high-score streaks alive.'
+      },
+      {
+        title: 'Screen-Wide Gesture Navigation',
+        desc: 'Swipe anywhere across the display to shift blocks, with protected exclusion zones for top control buttons and bottom ad banners.'
+      },
+      {
+        title: 'Edge-to-Edge Architectural Design',
+        desc: 'Full compliance with Android 15 & SDK 37 system bar and camera cutout window insets with light/dark adaptive status bars.'
+      }
+    ],
+    screenshots: [
+      '/images/numberblocks/1.jpeg',
+      '/images/numberblocks/2.jpeg',
+      '/images/numberblocks/3.jpeg',
+      '/images/numberblocks/4.jpeg'
+    ]
   }
 };
 
