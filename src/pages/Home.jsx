@@ -244,17 +244,17 @@ export default function Home() {
               {/* Screenshots Preview */}
               <div className="grid grid-cols-3 gap-2 mb-4">
                 <img
-                  src="/images/numberblocks/1.jpeg"
+                  src="/images/numberblocks/1.jpg"
                   alt="Number Blocks Menu Screen"
                   className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
                 />
                 <img
-                  src="/images/numberblocks/2.jpeg"
+                  src="/images/numberblocks/2.jpg"
                   alt="Number Blocks Gameplay"
                   className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
                 />
                 <img
-                  src="/images/numberblocks/3.jpeg"
+                  src="/images/numberblocks/3.jpg"
                   alt="Number Blocks Tutorial"
                   className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
                 />

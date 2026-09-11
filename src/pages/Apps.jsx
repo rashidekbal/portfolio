@@ -25,10 +25,12 @@ const publishedApps = [
     projectUrl: '/projects/number-blocks',
     tech: ['Java 17', 'Android SDK 37', 'ViewBinding', 'Custom Canvas', 'AdMob', 'AudioTrack', 'Material Design'],
     screenshots: [
-      '/images/numberblocks/1.jpeg',
-      '/images/numberblocks/2.jpeg',
-      '/images/numberblocks/3.jpeg',
-      '/images/numberblocks/4.jpeg'
+      '/images/numberblocks/1.jpg',
+      '/images/numberblocks/2.jpg',
+      '/images/numberblocks/3.jpg',
+      '/images/numberblocks/4.jpg',
+      '/images/numberblocks/5.jpg',
+      '/images/numberblocks/6.jpg'
     ]
   },
   {
