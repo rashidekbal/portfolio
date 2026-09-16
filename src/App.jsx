@@ -9,6 +9,7 @@ import BackgroundVisuals from './components/BackgroundVisuals';
 
 import Home from './pages/Home';
 import Projects from './pages/Projects';
+import Services from './pages/Services';
 import ProjectDetail from './pages/ProjectDetail';
 import Feedback from './pages/Feedback';
 import Contact from './pages/Contact';
@@ -68,6 +69,7 @@ function AnimatedRoutes() {
           <Route path="/apps/:slug" element={<AppDetail />} />
           <Route path="/support" element={<Support />} />
           <Route path="/projects" element={<Projects />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/projects/:slug" element={<ProjectDetail />} />
           <Route path="/feedback" element={<Feedback />} />
           <Route path="/contact" element={<Contact />} />

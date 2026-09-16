@@ -5,6 +5,7 @@ const quickLinks = [
   { label: 'Home', path: '/' },
   { label: 'Apps', path: '/apps' },
   { label: 'Projects', path: '/projects' },
+  { label: 'Services', path: '/services' },
   { label: 'Support & Help', path: '/support' },
   { label: 'Feedback', path: '/feedback' },
   { label: 'Contact', path: '/contact' },
