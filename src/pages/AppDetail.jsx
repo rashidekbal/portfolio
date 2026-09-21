@@ -302,6 +302,55 @@ Whether you need to merge multiple documents into a single PDF, split pages into
       '/images/numberblocks/5.jpg',
       '/images/numberblocks/6.jpg'
     ]
+  },
+  'bubble-shooter': {
+    title: 'Bubble Shooter Pro',
+    icon: '/images/bubbleshooter-icon.jpeg',
+    tagline: 'An arcade bubble shooter featuring 49 immersive worlds, custom 2D canvas physics, dynamic hex grid, and rewarded progression.',
+    category: 'Casual / Arcade Game',
+    lastUpdated: 'September 2026',
+    size: '32 MB',
+    requires: 'Android 10.0 and up (SDK 37)',
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/bubble-shooter/privacy',
+    termsUrl: '/apps/bubble-shooter/terms',
+    supportUrl: '/apps/bubble-shooter/support',
+    aboutText: `Bubble Shooter Pro is a vibrant, production-grade native Android arcade game engineered from scratch in Java targeting Android SDK 37. It delivers an addictive bubble-popping puzzle experience driven by a custom 2D Canvas physics engine that calculates hexagonal grid collisions, angle bounces, cluster detection, and chain-reaction drop physics.
+
+Travel across 49 uniquely themed worlds—from lush enchanted forests and crystal caves to volcanic peaks and galactic nebulas. Each world features interactive level maps with custom pin navigation, milestones, and reward gift chests that unlock after every 5 levels. With a fair-play heart and diamond economy, customizable player avatars, zero-heart penalty Endless Mode, and Google AdMob rewarded video integrations, Bubble Shooter Pro is built for both casual fun and high-stakes precision play.`,
+    features: [
+      {
+        title: 'Custom 2D Hexagonal Physics Engine',
+        desc: 'Built with a high-performance Canvas 2D engine calculating real-time ray trajectory bounces, hexagonal neighbor matching, cluster disconnection falls, and particle splash physics.'
+      },
+      {
+        title: '49 Themed Worlds & Progressive Map',
+        desc: 'Explore 49 distinct visual realms, each with unique background artwork, smooth map viewport scrolling, and level pin navigation.'
+      },
+      {
+        title: 'Gift Chests Every 5 Levels',
+        desc: 'Interactive milestone gift chests unlock after every 5 levels on each world map, rewarding players with free diamonds, special items, and game boosters.'
+      },
+      {
+        title: 'Fair-Play Heart & Diamond Economy',
+        desc: 'Standard level losses deduct 1 heart from a maximum of 5, with automatic time regeneration (30 min), diamond store purchases, and voluntary rewarded video refills.'
+      },
+      {
+        title: 'Penalty-Free Endless Arcade Mode',
+        desc: 'Survive against continuously descending rows of bubbles to rack up record combos without losing any hearts upon game over.'
+      },
+      {
+        title: 'Customizable Player Profile & Avatar Pin',
+        desc: 'Personalize your profile name and select from multiple colorful avatar pins that track your live progress across the world map.'
+      }
+    ],
+    screenshots: [
+      '/images/bubbleshooter/1.jpg',
+      '/images/bubbleshooter/2.jpg',
+      '/images/bubbleshooter/3.jpg',
+      '/images/bubbleshooter/4.jpg',
+      '/images/bubbleshooter/5.jpg'
+    ]
   }
 };
 
@@ -336,6 +385,8 @@ export default function AppDetail() {
         (filename.startsWith('eazywalls-') && !filename.includes('admin') && !filename.includes('cover')) ||
         src.includes('/videoplayer/') ||
         src.includes('/attend/') ||
+        src.includes('/numberblocks/') ||
+        src.includes('/bubbleshooter/') ||
         filename.toLowerCase().startsWith('screenshot_')
       );
       if (isMobile) {

@@ -13,6 +13,7 @@ const EMAILJS_PUBLIC_KEY = 'BG2At-wOZdOn2krC4';
 
 const appOptions = [
   { value: '', label: 'Select App' },
+  { value: 'bubble-shooter', label: 'Bubble Shooter Pro (Arcade Puzzle Game)' },
   { value: 'number-blocks', label: 'Number Blocks 2048 (Tactile Number Puzzle)' },
   { value: 'pdf-tools', label: 'PDF Tools (PDF Utility)' },
   { value: 'threadly', label: 'Threadly (Social Media)' },

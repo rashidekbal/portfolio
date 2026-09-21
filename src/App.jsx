@@ -38,6 +38,9 @@ import PdfToolSupport from './pages/support/PdfToolSupport';
 import NumberBlocksPrivacy from './pages/legal/NumberBlocksPrivacy';
 import NumberBlocksTerms from './pages/legal/NumberBlocksTerms';
 import NumberBlocksSupport from './pages/support/NumberBlocksSupport';
+import BubbleShooterPrivacy from './pages/legal/BubbleShooterPrivacy';
+import BubbleShooterTerms from './pages/legal/BubbleShooterTerms';
+import BubbleShooterSupport from './pages/support/BubbleShooterSupport';
 import { Analytics } from '@vercel/analytics/react';
 
 
@@ -94,6 +97,9 @@ function AnimatedRoutes() {
           <Route path="/apps/number-blocks/privacy" element={<NumberBlocksPrivacy />} />
           <Route path="/apps/number-blocks/terms" element={<NumberBlocksTerms />} />
           <Route path="/apps/number-blocks/support" element={<NumberBlocksSupport />} />
+          <Route path="/apps/bubble-shooter/privacy" element={<BubbleShooterPrivacy />} />
+          <Route path="/apps/bubble-shooter/terms" element={<BubbleShooterTerms />} />
+          <Route path="/apps/bubble-shooter/support" element={<BubbleShooterSupport />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </motion.div>

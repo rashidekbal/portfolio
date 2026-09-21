@@ -218,8 +218,78 @@ export default function Home() {
           Production mobile applications deployed to users with dedicated privacy policies, terms of service, and direct support centers.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-container mx-auto">
-          {/* App 1: Number Blocks 2048 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-container mx-auto">
+          {/* App 1: Bubble Shooter Pro */}
+          <div className="bg-bg-elevated rounded-2xl border border-border/60 p-6 flex flex-col justify-between hover:border-accent/40 transition-all shadow-sm">
+            <div>
+              <div className="flex items-center gap-4 mb-4">
+                <img
+                  src="/images/bubbleshooter-icon.jpeg"
+                  alt="Bubble Shooter Pro"
+                  className="w-14 h-14 rounded-2xl object-cover border border-border shadow-md"
+                />
+                <div>
+                  <h3 className="font-heading font-bold text-lg text-text-primary">
+                    Bubble Shooter Pro
+                  </h3>
+                  <span className="inline-block text-xs font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent mt-0.5">
+                    Arcade Physics · 49 Worlds
+                  </span>
+                </div>
+              </div>
+              <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                Native Android bubble shooter powered by custom 2D Canvas hex-grid physics, 49 immersive world maps, milestone gift chests, and fair-play heart economy.
+              </p>
+
+              {/* Screenshots Preview */}
+              <div className="grid grid-cols-3 gap-2 mb-4">
+                <img
+                  src="/images/bubbleshooter/1.jpg"
+                  alt="Bubble Shooter Map View"
+                  className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
+                />
+                <img
+                  src="/images/bubbleshooter/2.jpg"
+                  alt="Bubble Shooter Gameplay"
+                  className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
+                />
+                <img
+                  src="/images/bubbleshooter/3.jpg"
+                  alt="Bubble Shooter Chest Dialog"
+                  className="rounded-lg object-cover h-24 w-full border border-border/40 shadow-xs"
+                />
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center justify-between border-t border-border/50 pt-4 gap-2 text-xs">
+                <Link
+                  to="/apps/bubble-shooter/privacy"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors"
+                >
+                  <Shield size={14} />
+                  Privacy Policy
+                </Link>
+                <Link
+                  to="/apps/bubble-shooter/support"
+                  className="inline-flex items-center gap-1.5 text-text-muted hover:text-accent transition-colors"
+                >
+                  <HelpCircle size={14} />
+                  Support
+                </Link>
+                <a
+                  href="https://play.google.com/store"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1 font-medium text-accent hover:text-accent-hover transition-colors"
+                >
+                  Google Play
+                  <ExternalLink size={13} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          {/* App 2: Number Blocks 2048 */}
           <div className="bg-bg-elevated rounded-2xl border border-border/60 p-6 flex flex-col justify-between hover:border-accent/40 transition-all shadow-sm">
             <div>
               <div className="flex items-center gap-4 mb-4">

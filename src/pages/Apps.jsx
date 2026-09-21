@@ -5,6 +5,35 @@ import SEOHead from '../components/SEOHead';
 
 const publishedApps = [
   {
+    slug: 'bubble-shooter',
+    title: 'Bubble Shooter Pro',
+    icon: '/images/bubbleshooter-icon.jpeg',
+    tagline: 'A production-grade arcade bubble shooter with 49 themed worlds, custom 2D canvas physics, and rewarded progression.',
+    description: 'Bubble Shooter Pro is a native Android casual puzzle and arcade game crafted from the ground up in Java targeting modern Android SDK 37. It features a custom hex-grid physics engine, 49 immersive world themes with dynamic level maps, interactive gift chests unlocking after every 5 levels, an avatar-driven progression pin, a fair-play heart and diamond economy, and Google AdMob rewarded video integrations.',
+    features: [
+      '49 beautifully crafted themed worlds with dynamic map scrolling and progressive coordinate pin navigation',
+      'Custom 2D Canvas game physics engine with hexagonal grid collision and cluster chain-reaction popping',
+      'Milestone gift reward chests unlocking after every 5 levels (offsets 5 & 10) granting diamonds and booster rewards',
+      'Fair-play Heart Economy: 5 max lives with automatic time-based regeneration, diamond refills, and rewarded ad options (no hearts lost in Endless mode)',
+      'Arcade Endless Mode offering unlimited, heart-free rapid bubble matching and continuous survival scoring',
+      'Profile customization with custom player name and avatar pins navigating the world map',
+      '100% ViewBinding, low-latency audio effects, and modern edge-to-edge window insets'
+    ],
+    googlePlayUrl: 'https://play.google.com/store',
+    privacyUrl: '/apps/bubble-shooter/privacy',
+    termsUrl: '/apps/bubble-shooter/terms',
+    supportUrl: '/apps/bubble-shooter/support',
+    projectUrl: '/projects/bubble-shooter',
+    tech: ['Java', 'Android SDK 37', 'Custom 2D Engine', 'Hex Grid Physics', 'AdMob', 'ViewBinding', 'JSON Maps'],
+    screenshots: [
+      '/images/bubbleshooter/1.jpg',
+      '/images/bubbleshooter/2.jpg',
+      '/images/bubbleshooter/3.jpg',
+      '/images/bubbleshooter/4.jpg',
+      '/images/bubbleshooter/5.jpg'
+    ]
+  },
+  {
     slug: 'number-blocks',
     title: 'Number Blocks 2048',
     icon: '/images/numberblocks-icon.png',

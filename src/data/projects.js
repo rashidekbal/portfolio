@@ -644,5 +644,72 @@ The project strictly follows clean separation of concerns:
       "Full Android 15 & SDK 37 compliance with automatic status/navigation bar insets and 100% ViewBinding",
       "Rewarded AdMob undo economy offering 5 free undos per session with ad-supported continuation"
     ]
+  },
+  {
+    slug: "bubble-shooter",
+    title: "Bubble Shooter Pro",
+    tagline: "A production-grade native Android arcade bubble shooter with 49 themed worlds, custom 2D canvas physics, and rewarded progression",
+    description: `Bubble Shooter Pro is a native Android casual puzzle and arcade title engineered from the ground up in Java targeting Android SDK 37. It transforms the classic bubble-shooter mechanic into an epic journey across 49 uniquely themed visual worlds, powered by a custom-built 2D physics engine, hexagonal coordinate mathematics, milestone chest unlocks, and a fair-play heart economy.
+
+## Custom 2D Canvas Game Engine & Physics
+
+Unlike projects built with bulky third-party game frameworks, Bubble Shooter Pro features a lightweight, zero-overhead custom Android Canvas 2D engine:
+- **Hexagonal Grid Mathematics**: Accurate staggered odd/even row coordinate projections for perfect bubble interlocking and neighbor indexing.
+- **Raycasting & Trajectory Bouncing**: Real-time laser aiming indicator calculating wall reflection vectors and terminal grid collision coordinates before the bubble is launched.
+- **Cluster Matching & Floating Detachment**: Breadth-First Search (BFS) flood-fill algorithm for discovering contiguous same-color clusters (minimum 3), paired with an island-detection connectivity pass to drop disconnected floating bubbles with particle splash physics.
+- **Low-Latency Audio & Haptics**: Managed via SoundPool for instantaneous audio feedback on launch, wall bounce, cluster pop, and combo streaks.
+
+## Multi-World Progression & Interactive Map
+
+- **49 Themed Worlds**: From lush enchanted forests to crystal caverns, volcanic craters, and celestial nebulae, each world features custom high-resolution background artwork and thematic color palettes.
+- **Dynamic Viewport Camera**: Smooth world map scrolling with progressive level node pins and live player avatar tracking.
+- **Milestone Gift Chests**: Strategic reward chests positioned across the map that unlock after every 5 levels (level offsets 5 and 10), rewarding players with diamond caches and boosters.
+
+## Fair-Play Heart Economy & Monetization
+
+- **5-Heart Life System**: Players have a maximum of 5 hearts. Hearts are deducted only upon failing a standard level, preserving uninterrupted flow on winning streaks.
+- **Zero-Penalty Endless Mode**: A dedicated arcade mode with continuously descending rows where players can practice and chase high scores without any heart deduction.
+- **Heart Regeneration & Store**: Hearts automatically regenerate on a 30-minute timer. Players can also exchange earned diamonds (5💎 for 1, 12💎 for 3, or 20💎 for a full refill) or voluntarily view a Google AdMob rewarded video ad (+1 heart).
+- **Google AdMob Integration**: Seamlessly integrated rewarded video ads and interstitial transitions between world completions with externalized ad unit configurations.
+
+## Architecture & Code Structure
+
+- **Presentation Layer**: 100% ViewBinding across all activities, fragments, and custom dialogs, eliminating runtime \`findViewById\` lookups and guaranteeing compile-time type safety.
+- **Android SDK 37 & Edge-to-Edge**: Full compliance with Android 15 edge-to-edge window insets, managing camera cutouts and gesture navigation bars.
+- **Modular Data Management**: \`WorldConfigManager\` and \`PreferencesManager\` orchestrate local persistence, world unlock states, and coordinate registries without external server latency.`,
+    tags: [
+      "Java",
+      "Android SDK 37",
+      "Custom 2D Engine",
+      "Hex Grid Physics",
+      "Google AdMob",
+      "ViewBinding",
+      "JSON Map Config",
+      "SoundPool"
+    ],
+    coverImage: "/images/bubbleshooter-cover.jpeg",
+    screenshots: [
+      "/images/bubbleshooter/1.jpg",
+      "/images/bubbleshooter/2.jpg",
+      "/images/bubbleshooter/3.jpg",
+      "/images/bubbleshooter/4.jpg",
+      "/images/bubbleshooter/5.jpg"
+    ],
+    videoUrl: null,
+    links: {
+      github: "https://github.com/rashidekbal/BubbleShooterPro",
+      live: "https://play.google.com/store"
+    },
+    featured: true,
+    year: "2026",
+    role: "Solo Developer",
+    highlights: [
+      "Custom Canvas 2D engine with real-time raycast bouncing, hexagonal BFS cluster matching, and floating drop physics",
+      "49 fully rendered worlds with dynamic scrolling maps, progressive level pins, and milestone gift chests every 5 levels",
+      "Fair-play heart progression with 30-min auto-regeneration, diamond store refills, and zero-heart penalty Endless Mode",
+      "AdMob rewarded video pipeline for voluntary heart replenishment and booster unlocks",
+      "Player profile customizer with avatar pins rendered dynamically on the current world map coordinate",
+      "Full Android 15 & SDK 37 compliance with 100% ViewBinding and immersive system bar window insets"
+    ]
   }
 ];
