@@ -345,6 +345,7 @@ Travel across 49 uniquely themed worlds—from lush enchanted forests and crysta
       }
     ],
     screenshots: [
+      '/images/bubbleshooter-cover.jpeg',
       '/images/bubbleshooter/1.jpg',
       '/images/bubbleshooter/2.jpg',
       '/images/bubbleshooter/3.jpg',
