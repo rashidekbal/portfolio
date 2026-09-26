@@ -19,7 +19,7 @@ const publishedApps = [
       'Profile customization with custom player name and avatar pins navigating the world map',
       '100% ViewBinding, low-latency audio effects, and modern edge-to-edge window insets'
     ],
-    googlePlayUrl: 'https://play.google.com/store',
+    googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.redcodersgroup.bubbleshooter',
     privacyUrl: '/apps/bubble-shooter/privacy',
     termsUrl: '/apps/bubble-shooter/terms',
     supportUrl: '/apps/bubble-shooter/support',
@@ -47,7 +47,7 @@ const publishedApps = [
       'Screen-wide gesture navigation with touch-guarded action button exclusion areas',
       '100% ViewBinding and full Android 15 / SDK 37 edge-to-edge window insets compliance'
     ],
-    googlePlayUrl: 'https://play.google.com/store',
+    googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.redcodersgroup.numberblocks',
     privacyUrl: '/apps/number-blocks/privacy',
     termsUrl: '/apps/number-blocks/terms',
     supportUrl: '/apps/number-blocks/support',
@@ -75,7 +75,7 @@ const publishedApps = [
       'Compress, Merge, Split, Password Lock/Unlock, and Drag-and-Drop Page Reordering',
       'Clean MVVM architecture in Java 17 with ViewBinding and Room SQLite'
     ],
-    googlePlayUrl: 'https://play.google.com/store',
+    googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.redcodersgroup.pdftool',
     privacyUrl: '/apps/pdf-tools/privacy',
     termsUrl: '/apps/pdf-tools/terms',
     supportUrl: '/apps/pdf-tools/support',
@@ -95,7 +95,7 @@ const publishedApps = [
       'Custom controller overlay featuring speed control, screen lock, and orientation options',
       'Dynamic search and local files organization'
     ],
-    googlePlayUrl: 'https://play.google.com/store',
+    googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.redcodegroups.videoplayer',
     privacyUrl: '/apps/4k-media-player/privacy',
     termsUrl: '/apps/4k-media-player/terms',
     supportUrl: '/apps/4k-media-player/support',
@@ -115,7 +115,7 @@ const publishedApps = [
       'Mid-Sem examination mark tracking and performance trends across 3 assessment cycles',
       'Android launcher App Widget for live percentage updates and bunk safety warnings'
     ],
-    googlePlayUrl: 'https://play.google.com/store',
+    googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.redcodersgroup.attend_collegeattendancetracker',
     privacyUrl: '/apps/attend/privacy',
     termsUrl: '/apps/attend/terms',
     supportUrl: '/apps/attend/support',
