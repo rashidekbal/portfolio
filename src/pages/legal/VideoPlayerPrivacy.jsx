@@ -6,24 +6,31 @@ const sections = [
   {
     title: 'Introduction',
     content:
-      "This Privacy Policy explains how 4K Media Player ('we', 'us', 'our') handles user data within the 4K Media Player Android application. We respect your privacy and provide a premium, advertisement-ready, local-first media playback experience that prioritizes your data safety and privacy."
+      "This Privacy Policy explains how 4K Media Player ('we', 'us', 'our') handles user data within the 4K Media Player Android application. We respect your privacy and provide a premium, advertisement-supported, local-first media playback experience that prioritizes your data safety and privacy."
   },
   {
     title: 'Information We Collect & Access Permissions',
-    content: "The 4K Media Player operates primarily as a local-first application. To function correctly, it requests standard Android runtime access permissions:",
+    content: "The 4K Media Player operates primarily as a local-first application. To function correctly and provide core features, it requests standard Android runtime access permissions and processes technical identifiers:",
     list: [
-      'Media Library Access (READ_MEDIA_VIDEO & READ_MEDIA_AUDIO): Required under Android 13+ to scan your device for local video and audio files and populate the media tabs.',
-      'Playback History Cache: Playback positions, durations, and track information are recorded locally in a Room database to support the "Recents" tab and resume playback where you left off.',
-      'Storage Read/Write: On devices running older Android versions, storage permission is used exclusively for reading and displaying media content.'
+      'Media Library Access (READ_MEDIA_VIDEO & READ_MEDIA_AUDIO): Required under Android 13+ to scan your device for local video and audio files and populate the media library.',
+      'Playback History Cache: Playback positions, durations, and track information are recorded locally in a secure Room database to support the "Recents" tab and resume playback where you left off.',
+      'Advertising Identifiers (AD_ID / GAID) & Device ID: Our third-party advertising partners (Unity LevelPlay / ironSource mediation) collect and process anonymous advertising identifiers (Google Advertising ID) and non-sensitive device identifiers to deliver relevant advertisements (banner, interstitial, native, rewarded), manage ad frequency capping, prevent ad fraud, and measure campaign performance.',
+      'Crash Logs & Diagnostic Data: In the event of an application error or crash, non-personally identifiable diagnostic information (such as stack traces, crash logs, device model, operating system version, and performance metrics) may be gathered to detect bugs, analyze app health, and improve overall stability.',
+      'Storage Read/Write: On devices running older Android versions, storage permission is used exclusively for reading and displaying local media content.'
     ]
   },
   {
     title: 'Data Sharing & Cloud Sync',
-    content: 'We do not run external media synchronization servers or require account sign-ups. Your media files, playlists, and history never leave your device. All media scanning and playback history queries are processed 100% locally on your smartphone.'
+    content: 'We do not run external media synchronization servers or require account sign-ups. Your personal media files, playlists, and history never leave your device. All media scanning and playback history queries are processed 100% locally on your smartphone.'
   },
   {
-    title: 'Third-Party Services',
-    content: 'The application uses the Android system MediaSessionService API to support background audio notifications and hardware/lockscreen media controller widgets. Future versions may integrate standard, policy-compliant advertisement networks (such as AdMob) to support development. No personal identification data or local media metadata is shared with advertising partners.'
+    title: 'Third-Party Services & Advertising',
+    content: 'To support continued maintenance and development, the application integrates trusted third-party SDKs that operate under their respective privacy policies:',
+    list: [
+      'Unity LevelPlay (ironSource Mediation): Delivers banner, interstitial, native, and rewarded advertisements across integrated ad networks using device identifiers and advertising IDs (AD_ID) in compliance with Google Play Developer policies.',
+      'Crash Reporting & Diagnostics: Standard system and crash logging tools collect anonymous diagnostic traces during unexpected failures to ensure ongoing application reliability.',
+      'Android MediaSession API: Enables background audio playback notifications, lockscreen media controls, and hardware media button integration without collecting personal data.'
+    ]
   },
   {
     title: 'Data Retention and Cache Management',
@@ -33,7 +40,7 @@ const sections = [
   {
     title: 'Security',
     content:
-      'All local database transactions are securely isolated within the sandbox environment of the Android operating system. We do not transmit files, metadata, or telemetry over the internet.'
+      'All local database transactions are securely isolated within the sandbox environment of the Android operating system. We do not transmit files, personal identities, or local media metadata over the internet.'
   },
   {
     title: 'Contact & Support',
@@ -75,7 +82,7 @@ export default function VideoPlayerPrivacy() {
                 4K Media Player Privacy Policy
               </h1>
               <p className="text-text-muted text-sm mt-1">
-                Last updated: July 2026
+                Last updated: October 2026
               </p>
             </div>
           </motion.div>
