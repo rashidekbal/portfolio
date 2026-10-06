@@ -9,9 +9,9 @@ const sections = [
       'By installing or using PDF Tools for Android, you agree to comply with and be bound by these Terms of Service. If you disagree with any part of these terms, please do not use the application.'
   },
   {
-    title: '2. Local Processing & User Responsibility',
+    title: '2. Local Processing & Document Management',
     content:
-      'PDF Tools processes files locally on your device. You retain full ownership and responsibility for all documents, passwords, and content modified using the application. We are not liable for accidental data loss caused by low storage or OS file system disruptions.'
+      'PDF Tools processes files (PDFs, Word documents, Excel spreadsheets, text files, and images) entirely locally on your device. You retain full ownership and responsibility for all documents, edits, cell modifications, and passwords managed with the application. We do not transmit or back up your document contents to cloud servers; you are responsible for maintaining backups of your files.'
   },
   {
     title: '3. Subscriptions & In-App Purchases',
@@ -67,7 +67,7 @@ export default function PdfToolTerms() {
                   PDF Tools Terms of Service
                 </h1>
                 <p className="text-text-muted text-sm mt-1">
-                  Last updated: August 2026
+                  Last updated: October 2026
                 </p>
               </div>
             </div>

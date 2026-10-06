@@ -6,13 +6,13 @@ const sections = [
   {
     title: '1. Executive Summary & 100% On-Device Processing',
     content:
-      'PDF Tools (com.redcodersgroup.pdftool) is engineered with a strict on-device processing architecture. All document operations—including compression, merging, splitting, encryption, decryption, page organizing, and viewing—take place entirely on your device using local compute APIs. Your PDF files, document contents, and passwords are NEVER uploaded, transmitted, or saved to external servers.'
+      'PDF Tools (com.redcodersgroup.pdftool) is engineered with a strict on-device processing architecture. All document operations—including PDF compression, merging, splitting, encryption, decryption, page organizing, as well as viewing and editing Microsoft Word (DOCX), Excel spreadsheets (XLSX, XLS, CSV), and text files (TXT, HTML, JSON, LOG)—take place entirely on your device using local compute APIs. Your files, document contents, spreadsheet cells, and passwords are NEVER uploaded, transmitted, or saved to external cloud servers.'
   },
   {
     title: '2. Information We Collect & Data Safety Declarations',
     content: null,
     list: [
-      'Document Data: Zero collection. All file processing happens locally in device memory and temporary cache.',
+      'Document Data: Zero collection. All file processing, viewing, and editing happen locally in device memory and temporary cache.',
       'Device or Other IDs: Google Advertising ID (AAID), App Set ID, and Android ID collected and shared by third-party advertising and analytics SDKs for ad serving, frequency capping, fraud prevention, and performance metrics.',
       'App Performance & Crash Diagnostics: Crash logs, device hardware specifications, OS version, and diagnostic telemetry collected via Google Firebase Crashlytics & Firebase Analytics to ensure app stability.',
       'In-App Purchase Information: Processed securely through Google Play Billing. We validate purchase tokens and active subscription entitlements without storing payment card or banking information.',
@@ -74,7 +74,7 @@ export default function PdfToolPrivacy() {
                   PDF Tools Privacy Policy
                 </h1>
                 <p className="text-text-muted text-sm mt-1">
-                  Last updated: March 2026 • Effective for all users
+                  Last updated: October 2026 • Effective for all users
                 </p>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default function PdfToolPrivacy() {
             <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-400 flex items-start gap-3 my-8">
               <CheckCircle2 size={20} className="mt-0.5 flex-shrink-0" />
               <p className="text-sm leading-relaxed">
-                <strong>100% Local Guarantee:</strong> Your documents are processed locally on your phone. PDF Tools never collects, stores, or transmits your PDF files.
+                <strong>100% Local Guarantee:</strong> Your documents, spreadsheets, and files are processed locally on your phone. PDF Tools never collects, stores, or transmits your files.
               </p>
             </div>
           </motion.div>
