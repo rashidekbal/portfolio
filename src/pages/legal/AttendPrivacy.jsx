@@ -4,41 +4,71 @@ import SEOHead from '../../components/SEOHead';
 
 const sections = [
   {
-    title: 'Introduction',
+    title: '1. Introduction & Overview',
     content:
-      "This Privacy Policy explains how Attend ('we', 'us', 'our') handles user data within the Attend - College Attendance Tracker Android application. We believe strongly in user privacy and provide a 100% local-first, offline-first experience with zero tracking or telemetry."
+      "This Privacy Policy explains how Attend ('we', 'us', 'our') handles user data within the Attend - College Attendance Tracker Android application. We are committed to protecting student privacy. Attend is engineered with a privacy-respecting, local-first architecture: your academic records, timetable schedules, internal marks, and personal profile data remain stored directly on your device."
   },
   {
-    title: 'Information We Collect & Storage Model',
+    title: '2. Information We Store Locally (On-Device)',
     content:
-      'Attend operates completely offline on your device using a local SQLite Room database. All attendance logs, timetable entries, assignments, mid-sem examination scores, subject details, and personalized thresholds are stored solely on your smartphone.',
+      'Attend stores your core academic and personal records exclusively on your smartphone using a secure local SQLite Room database. This data is never sent to our servers or synchronized to any external cloud database:',
     list: [
-      'Attendance & Timetable Records: Subject periods, lab sessions, present/absent logs, and holiday calendars are stored locally.',
-      'Examination Marks: Mid-semester scores and subject benchmarks are processed entirely in-memory and in your local database.',
-      'Assignments & Tasks: Task names, due dates, and submission states remain exclusively on your device.',
-      'Notifications & Alarms: AlarmManager and BroadcastReceivers run natively on-device to dispatch schedule reminders and assignment alerts.'
+      'Academic Profile: Student name, college/university name, department/branch, semester, roll number, and contact details entered during setup remain solely in local storage.',
+      'Attendance Logs & Timetable: Scheduled periods, laboratory sessions, timetable slots, present/absent/cancelled records, and holiday calendars are maintained on-device.',
+      'Internal Assessment Marks: Mid-semester scores, benchmark targets, and percentage calculations are computed and retained locally.',
+      'Assignments & Tasks: Task descriptions, deadlines, priority tags, and completion statuses are saved strictly on your local device.'
     ]
   },
   {
-    title: 'Zero Cloud Sync & No External Data Transmission',
+    title: '3. Application Analytics & Diagnostics',
     content:
-      'We do not operate external database servers, analytics collectors, or cloud synchronization for Attend. No user data, device identifiers, or academic records are ever transmitted over the network.'
+      'To maintain application stability, improve feature performance, and diagnose technical issues, Attend integrates industry-standard Google Firebase services:',
+    list: [
+      'Firebase Analytics: Collects aggregated, non-personally identifiable app interaction metrics (such as screen views, button interactions, and feature usage frequency). We strictly do not transmit student names, email addresses, phone numbers, or academic marks to analytics.',
+      'Firebase Crashlytics: Collects anonymous crash diagnostics, stack traces, device hardware models, and OS versions when an unexpected application error occurs. This diagnostic telemetry enables us to promptly debug and release stability updates.',
+      'Data Encryption in Transit: All telemetry and diagnostic data sent to Google Firebase services is encrypted in transit using standard HTTPS/TLS protocols.'
+    ]
   },
   {
-    title: 'Third-Party Libraries & Permissions',
+    title: '4. Advertising (Google AdMob)',
     content:
-      'Attend does not integrate third-party advertising SDKs or tracking frameworks. Standard Android permissions (such as POST_NOTIFICATIONS and SCHEDULE_EXACT_ALARM) are used solely to deliver local timetable alarms and deadline reminders.'
+      'Attend integrates Google AdMob (Google Mobile Ads SDK) to display non-intrusive advertisements (such as banner and interstitial ads) that keep the application free and actively maintained:',
+    list: [
+      'Google AdMob may process anonymous device identifiers, coarse network information, and Google Advertising ID (AAID) in accordance with Google’s Privacy Policy.',
+      'Users can manage personalized ad preferences or reset their Google Advertising ID at any time via Android System Settings -> Google -> Ads.'
+    ]
   },
   {
-    title: 'Data Control & Deletion',
+    title: '5. Android Permissions & Usage',
     content:
-      'You have complete ownership and control over your data. You can edit or delete individual subjects, marks, and tasks within the app, or wipe all app data at any time via Android System Settings -> Apps -> Attend -> Storage & Cache -> Clear Storage.'
+      'Attend requests only necessary permissions strictly required to provide its core utilities:',
+    list: [
+      'POST_NOTIFICATIONS: Enables the app to deliver local class schedule alarms, upcoming period reminders, and assignment deadline warnings.',
+      'SCHEDULE_EXACT_ALARM: Allows precise on-device scheduling for daily class notification alarms at user-selected times.',
+      'RECEIVE_BOOT_COMPLETED: Automatically re-arms your scheduled daily alarms and timetable reminders after your device restarts.',
+      'INTERNET & ACCESS_NETWORK_STATE: Required solely to load advertising and transmit anonymous Firebase crash diagnostics and usage telemetry.'
+    ]
   },
   {
-    title: 'Contact & Inquiries',
+    title: '6. User Data Control, Backup & Deletion',
+    content:
+      'You maintain absolute ownership and control over all your data:',
+    list: [
+      'Google Drive Cloud Backup: Attend offers an optional feature enabling users to sign in with their Google account to back up their data directly to their personal Google Drive storage. This data is written exclusively to the hidden Application Data folder (drive.appdata scope) allocated to Attend. Attend cannot view, modify, or delete any personal files, documents, or photos outside this sandboxed folder. Automated nightly backups run locally via Android WorkManager around 2:00 AM while the device is charging. Users can disconnect their Google account or disable auto-backups at any time in Settings.',
+      'Local Backup & Export: Attend provides built-in JSON export and import tools allowing you to back up your timetable, attendance, marks, and tasks to your own storage or transfer them between devices.',
+      'Instant Data Deletion: You can modify or delete individual entries directly in the app, or wipe all stored application records completely at any time by going to Android System Settings -> Apps -> Attend -> Storage & Cache -> Clear Storage.'
+    ]
+  },
+  {
+    title: '7. Children and Student Privacy',
+    content:
+      'Attend is intended for college and university students. We do not knowingly solicit or collect personal identifiable information from children under the age of 13. If you believe any such data has inadvertently reached our diagnostic tools, please contact us immediately for deletion.'
+  },
+  {
+    title: '8. Contact & Support',
     content: (
       <>
-        If you have questions regarding this Privacy Policy, please reach out to:{' '}
+        If you have questions, feedback, or concerns regarding this Privacy Policy or data practices, please contact us at:{' '}
         <a
           href="mailto:dev.rasid.ekbal@gmail.com?subject=Attend%20Privacy"
           className="text-accent hover:text-accent-hover transition-colors link-underline"
@@ -57,7 +87,7 @@ export default function AttendPrivacy() {
     <>
       <SEOHead
         title="Attend — Privacy Policy"
-        description="Privacy policy for the Attend College Attendance Tracker Android application."
+        description="Privacy policy and data collection disclosures for the Attend College Attendance Tracker Android application."
       />
 
       <div className="pt-28 pb-20 section-padding">
@@ -74,7 +104,7 @@ export default function AttendPrivacy() {
                 Attend Privacy Policy
               </h1>
               <p className="text-text-muted text-sm mt-1">
-                Last updated: August 2026
+                Last updated: October 2026
               </p>
             </div>
           </motion.div>

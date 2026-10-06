@@ -142,36 +142,44 @@ const appDetailsData = {
   attend: {
     title: 'Attend',
     icon: '/images/attend-icon.png',
-    tagline: 'An intelligent, period-weighted college attendance tracker and academic planner built natively for Android.',
+    tagline: 'An intelligent, period-weighted college attendance tracker and academic planner with automated Google Drive cloud backup.',
     category: 'Education / Productivity',
-    lastUpdated: 'August 2026',
-    size: '12 MB',
+    lastUpdated: 'October 2026',
+    size: '13 MB',
     requires: 'Android 8.0 and up',
-    googlePlayUrl: 'https://play.google.com/store',
+    googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.redcodersgroup.attend_collegeattendancetracker',
     privacyUrl: '/apps/attend/privacy',
     termsUrl: '/apps/attend/terms',
     supportUrl: '/apps/attend/support',
-    aboutText: `Attend is a comprehensive academic companion engineered for university students. Built with an intelligent, period-weighted calculation engine, Attend accounts for varying daily timetables, multi-hour lab sessions, and dynamic institutional attendance criteria. With smart "Safe to Bunk" formulas, exam mark analytics, assignment deadline trackers, and a launcher home screen widget, Attend ensures you stay comfortably ahead of your academic requirements with zero cloud dependency.`,
+    aboutText: `Attend is a modern, privacy-respecting academic companion engineered natively for college and university students. Powered by an intelligent, period-weighted calculation engine, Attend accounts for varying daily timetables, multi-hour laboratory blocks, and dynamic institutional attendance thresholds (e.g., 75% or 85%). Featuring real-time "Safe to Bunk" analytics, automated nightly Google Drive cloud backups, offline JSON data export/restore, internal mid-sem mark tracking, assignment deadline reminders, and an interactive home screen widget, Attend keeps you on top of every semester effortlessly.`,
     features: [
       {
+        title: 'Google Drive Cloud Backup & Nightly Auto-Sync',
+        desc: 'Connect your Google account with 1 tap to securely synchronize your attendance, timetable, marks, and settings to your private Google Drive app storage. Automatically backs up every night around 2:00 AM while charging.'
+      },
+      {
         title: 'Period-Weighted Attendance Math',
-        desc: 'Accurately calculates percentages by cross-referencing logs with scheduled period hours, handling 2-hour labs and differing daily period allocations perfectly.'
+        desc: 'Accurately calculates percentages by cross-referencing logs with scheduled period hours, handling 2-hour labs, custom period lengths (30 to 90 min), and differing daily period allocations perfectly.'
       },
       {
         title: 'Safe-to-Bunk & Recovery Analytics',
-        desc: 'Live calculation indicates exactly how many consecutive sessions you can skip safely without dipping below threshold, or how many you need to attend to recover.'
+        desc: 'Live calculation indicates exactly how many consecutive sessions you can skip safely without dipping below threshold, or how many classes you must attend to recover.'
+      },
+      {
+        title: 'Interactive Launcher App Widgets',
+        desc: "View today's class schedule, live overall percentage, bunk safety badges, and mark attendance (Present, Absent, Cancelled) with 1 tap right from your Android home screen."
+      },
+      {
+        title: 'Mid-Sem Marks Hub & Trends',
+        desc: 'Log and analyze internal examination scores across Mid Sem 1, 2, and 3 with target benchmark indicators and subject performance trend insights.'
       },
       {
         title: 'Assignment & Deadline Management',
-        desc: 'Track academic tasks and assignments with dynamic countdowns, submission statuses, and overdue alert badges.'
+        desc: 'Track academic tasks, projects, and lab submissions with dynamic countdowns, priority flags, and completion status toggles.'
       },
       {
-        title: 'Mid-Sem Marks Hub',
-        desc: 'Log and analyze internal examination scores across Mid Sem 1, 2, and 3 with target benchmark indicators and subject trend insights.'
-      },
-      {
-        title: 'Launcher App Widget',
-        desc: 'Instant attendance percentage and bunk safety visibility directly from your Android home screen launcher.'
+        title: 'Offline JSON Export & 1-Tap Cloud Restore',
+        desc: 'Export full offline JSON backups for total data ownership, or seamlessly restore your complete profile and timetable during onboarding on a new device.'
       }
     ],
     screenshots: [

@@ -26,6 +26,14 @@ const faqs = [
   {
     q: 'How do I add the Attendance Widget to my home screen?',
     a: 'Long-press on your Android home screen launcher, select "Widgets", locate "Attend", and drag the widget to your desired position.'
+  },
+  {
+    q: 'How does Google Drive Cloud Backup work in Attend?',
+    a: 'Attend connects directly to your Google account via Google Sign-In and saves your timetable, attendance logs, marks, and settings to a private, sandboxed app data partition on your Google Drive. It can run automatically overnight (~2:00 AM while charging and on network) or whenever you tap "Back Up Now" in Settings.'
+  },
+  {
+    q: 'How do I restore my backup on a new phone?',
+    a: 'When you install Attend on a new device, tap "Restore Backup" on the Welcome onboarding screen and select "Restore from Google Drive". Sign in with the same Google account, and Attend will restore all your subjects, attendance history, timetable, and preferences in seconds.'
   }
 ];
 

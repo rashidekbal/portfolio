@@ -106,21 +106,22 @@ const publishedApps = [
     slug: 'attend',
     title: 'Attend',
     icon: '/images/attend-icon.png',
-    tagline: 'An intelligent, period-weighted college attendance tracker and academic hub with safe-to-bunk analytics.',
-    description: 'Attend is a native Android academic management app built for college students. It features period-weighted multi-lab attendance math, real-time safe-to-bunk predictions, mid-sem score tracking, and offline Room DB persistence.',
+    tagline: 'An intelligent, period-weighted college attendance tracker and academic hub with automated Google Drive cloud backup.',
+    description: 'Attend is a native Android academic management app built for college students. It features period-weighted multi-lab attendance math, real-time safe-to-bunk predictions, automated nightly Google Drive backups, interactive launcher widgets, mid-sem score tracking, and offline Room DB persistence.',
     features: [
-      'Period-weighted attendance engine accounting for multi-hour labs and daily timetable variations',
-      'Real-time Safe-to-Bunk and recovery calculation algorithms',
+      'Automated nightly Google Drive cloud backup (~2:00 AM while charging) and 1-tap restore',
+      'Period-weighted attendance engine accounting for multi-hour labs, custom period lengths, and daily timetable variations',
+      'Real-time Safe-to-Bunk and recovery calculation algorithms based on custom attendance targets',
+      'Interactive launcher App Widget with today\'s classes and 1-tap quick marking (P / A / C)',
       'Assignment tracker with dynamic due dates and submission toggling',
-      'Mid-Sem examination mark tracking and performance trends across 3 assessment cycles',
-      'Android launcher App Widget for live percentage updates and bunk safety warnings'
+      'Mid-Sem examination mark tracking and performance trends across 3 assessment cycles'
     ],
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.redcodersgroup.attend_collegeattendancetracker',
     privacyUrl: '/apps/attend/privacy',
     termsUrl: '/apps/attend/terms',
     supportUrl: '/apps/attend/support',
     projectUrl: '/projects/attend',
-    tech: ['Java 17', 'Android SDK', 'MVVM', 'Room', 'App Widgets', 'Material Design']
+    tech: ['Java 17', 'Android SDK', 'MVVM', 'Room', 'Google Drive API', 'WorkManager', 'App Widgets', 'Material Design']
   }
 ];
 
