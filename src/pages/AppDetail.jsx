@@ -183,28 +183,12 @@ const appDetailsData = {
       }
     ],
     screenshots: [
-      '/images/attend/Screenshot_20260815_220741.jpg',
-      '/images/attend/Screenshot_20260815_220743.jpg',
-      '/images/attend/Screenshot_20260815_220746.jpg',
-      '/images/attend/Screenshot_20260815_220829.jpg',
-      '/images/attend/Screenshot_20260815_220839.jpg',
-      '/images/attend/Screenshot_20260815_220845.jpg',
-      '/images/attend/Screenshot_20260815_220849.jpg',
-      '/images/attend/Screenshot_20260815_220853.jpg',
-      '/images/attend/Screenshot_20260815_220856.jpg',
-      '/images/attend/Screenshot_20260815_220859.jpg',
-      '/images/attend/Screenshot_20260815_220918.jpg',
-      '/images/attend/Screenshot_20260815_220948.jpg',
-      '/images/attend/Screenshot_20260815_220950.jpg',
-      '/images/attend/Screenshot_20260815_220951.jpg',
-      '/images/attend/Screenshot_20260815_220956.jpg',
-      '/images/attend/Screenshot_20260815_220959.jpg',
-      '/images/attend/Screenshot_20260815_221000.jpg',
-      '/images/attend/Screenshot_20260815_221004.jpg',
-      '/images/attend/Screenshot_20260815_221006.jpg',
-      '/images/attend/Screenshot_20260815_221007.jpg',
-      '/images/attend/Screenshot_20260815_221044.jpg',
-      '/images/attend/Screenshot_20260815_221116.jpg'
+      '/images/attend/01-device-bottom.png',
+      '/images/attend/02-device-top.png',
+      '/images/attend/03-device-bottom.png',
+      '/images/attend/04-device-top.png',
+      '/images/attend/05-device-bottom.png',
+      '/images/attend/06-device-top.png'
     ]
   },
   'pdf-tools': {
