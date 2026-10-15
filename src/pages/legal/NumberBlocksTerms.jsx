@@ -14,9 +14,17 @@ const sections = [
       'Number Blocks 2048 and its original algorithms, graphic designs, tactile theme palettes, procedural sound synthesis, and UI code are the intellectual property of Rasid Ekbal. You are granted a personal, non-exclusive, non-transferable license to play the game on your Android device.'
   },
   {
-    title: '3. In-Game Undos and Advertisements',
-    content:
-      'Number Blocks provides 5 free moves undos per game session. Additional undos can be activated by voluntarily choosing to view rewarded advertisements provided via Google AdMob. Ads are subject to AdMob policies and network availability.'
+    title: '3. In-Game Undos and Advertisements (Google AdMob)',
+    content: (
+      <div className="space-y-2">
+        <p>
+          Number Blocks 2048 provides 5 complimentary move undos per active game session. Additional undos can be acquired by voluntarily opting to view rewarded video advertisements served via Google AdMob. The app may also display banner advertisements during gameplay.
+        </p>
+        <p>
+          By accessing ad-supported features, you acknowledge that third-party advertising partners (Google AdMob) collect and process device identifiers, including the Android Advertising ID (AAID), IP address, and technical diagnostic telemetry in accordance with our Privacy Policy and Google’s Advertising Policies. Ad delivery is subject to third-party network availability and internet connectivity.
+        </p>
+      </div>
+    )
   },
   {
     title: '4. Disclaimer of Warranties',
@@ -73,7 +81,7 @@ export default function NumberBlocksTerms() {
                   Terms of Service
                 </h1>
                 <p className="text-text-muted text-sm mt-1">
-                  Number Blocks 2048 · Effective Date: September 2026
+                  Number Blocks 2048 · Effective Date: October 2026
                 </p>
               </div>
             </div>
@@ -81,7 +89,7 @@ export default function NumberBlocksTerms() {
             <div className="p-4 rounded-xl bg-accent/5 border border-accent/20 mb-8 flex items-start gap-3">
               <CheckCircle2 size={20} className="text-accent shrink-0 mt-0.5" />
               <p className="text-sm text-text-secondary">
-                <strong className="text-text-primary">Summary:</strong> Play freely, enjoy endless merging, respect intellectual property, and reach out if you encounter any issues.
+                <strong className="text-text-primary">Summary:</strong> Play freely, enjoy endless merging, respect intellectual property, and acknowledge third-party AdMob services for in-game rewarded undos.
               </p>
             </div>
 
@@ -91,7 +99,9 @@ export default function NumberBlocksTerms() {
                   <h2 className="font-heading font-semibold text-text-primary text-lg mb-3">
                     {sec.title}
                   </h2>
-                  <p>{sec.content}</p>
+                  {sec.content && (
+                    typeof sec.content === 'string' ? <p>{sec.content}</p> : <div>{sec.content}</div>
+                  )}
                 </div>
               ))}
             </div>
