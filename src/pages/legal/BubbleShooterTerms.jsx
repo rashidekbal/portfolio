@@ -19,9 +19,17 @@ const sections = [
       'Bubble Shooter Pro implements an in-game heart (lives) and diamond progression economy. Hearts are deducted upon losing a standard level and refill automatically over time or via voluntary rewarded ad views / diamond exchanges. In Endless Mode, no hearts are deducted. In-game currency (diamonds) and hearts hold no real-world monetary value and cannot be redeemed for fiat currency.'
   },
   {
-    title: '4. Rewarded Advertisements',
-    content:
-      'The app provides optional rewarded video ads powered by Google AdMob, allowing players to voluntarily watch advertisements in exchange for game benefits (e.g., extra hearts or continuation opportunities). Ad availability is subject to network connectivity and AdMob inventory.'
+    title: '4. Advertisements & Google AdMob Disclosures',
+    content: (
+      <div className="space-y-2">
+        <p>
+          Bubble Shooter Pro includes banner advertisements, level-transition interstitials, and optional rewarded video ads powered by Google AdMob (e.g., allowing players to voluntarily watch ads in exchange for extra hearts or continued gameplay).
+        </p>
+        <p>
+          By accessing ad-supported features, you acknowledge that third-party advertising partners (Google AdMob) collect and process device identifiers, including the Android Advertising ID (AAID), IP address, and technical diagnostic telemetry in accordance with our Privacy Policy and Google’s Advertising Policies. Ad delivery is subject to third-party network availability and internet connectivity.
+        </p>
+      </div>
+    )
   },
   {
     title: '5. Disclaimer of Warranties',
@@ -78,7 +86,7 @@ export default function BubbleShooterTerms() {
                   Terms of Service
                 </h1>
                 <p className="text-text-muted text-sm mt-1">
-                  Bubble Shooter Pro · Effective Date: September 2026
+                  Bubble Shooter Pro · Effective Date: October 2026
                 </p>
               </div>
             </div>
@@ -86,7 +94,7 @@ export default function BubbleShooterTerms() {
             <div className="p-4 rounded-xl bg-accent/5 border border-accent/20 mb-8 flex items-start gap-3">
               <CheckCircle2 size={20} className="text-accent shrink-0 mt-0.5" />
               <p className="text-sm text-text-secondary">
-                <strong className="text-text-primary">Summary:</strong> Play freely, experience all 49 worlds, respect the game intellectual property, and enjoy the fair-play heart and diamond progression.
+                <strong className="text-text-primary">Summary:</strong> Play freely, experience all 49 worlds, respect the game intellectual property, and acknowledge third-party AdMob services for in-game rewarded hearts and ads.
               </p>
             </div>
 
@@ -96,7 +104,9 @@ export default function BubbleShooterTerms() {
                   <h2 className="font-heading font-semibold text-text-primary text-lg mb-3">
                     {sec.title}
                   </h2>
-                  <p>{sec.content}</p>
+                  {sec.content && (
+                    typeof sec.content === 'string' ? <p>{sec.content}</p> : <div>{sec.content}</div>
+                  )}
                 </div>
               ))}
             </div>
